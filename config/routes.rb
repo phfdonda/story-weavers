@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-
-  root 'articles#index'
+  root 'categories#index'
 
   resources :users, only: %i[index show] do
     resources :votes

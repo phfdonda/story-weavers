@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  authenticates_with_sorcery!
 
   validates :name, presence: true, length: { maximum: 20 }
 

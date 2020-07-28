@@ -1,9 +1,9 @@
 module ApplicationHelper
   def flash_msg
     if notice
-      render notice_msg
+      render partial: 'layouts/notice_msg'
     elsif alert
-      render alert_msg
+      render partial: 'layouts/alert_msg'
     end
   end
 
