@@ -5,7 +5,7 @@ class Category < ApplicationRecord
 
   scope :by_priority, -> { order(priority: :desc) }
 
-  validate :priority, if: :in_range_of_priority?, on: %i[create update]
+  validate :priority, if: :in_range_of_priority?, on: %i[create, update]
 
   def in_range_of_priority?
     [1, 2, 3, 4, 5].include?(:priority)
