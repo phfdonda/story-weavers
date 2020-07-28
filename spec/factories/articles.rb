@@ -2,7 +2,6 @@ FactoryBot.define do
   factory :random_article, class: 'Article' do
     title { Faker::Movies::StarWars.character }
     text { Faker::Movies::StarWars.quote(character: title) }
-    date { Faker::Date.backward(1) }
     sequence(:author_id) { |n| n }
 
     trait :cat1 do
