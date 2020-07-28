@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
   root 'categories#index'
 
+  get 'signup', to: 'users#new'
+
+  # Routes for sessions
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+
   resources :users, only: %i[index show] do
     resources :votes
   end

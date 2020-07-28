@@ -1,15 +1,22 @@
 class SessionsController < ApplicationController
+  def new
+    redirect_to root_path unless current_user.nil?
+  end
+
   def create
-    if login(params[:email], params[:password])
-      redirect_back_or_to(articles_path, notice: 'Logged in successfully.')
+    user = User.find_it_by_name(params[:session][:name])
+    if user.nil?
+      redirect_to login_path, alert: 'Invalid name' unless params[:session][:name].split.empty?
+      redirect_to login_path, alert: 'Don\'t you have a name, dear?' if params[:session][:name].split.empty?
     else
-      flash.now.alert = 'Login failed.'
-      render action: :new
+      log_in user
+      remember user
+      redirect_to root_path
     end
   end
 
   def destroy
     logout
-    redirect_to(:authors, notice: 'Logged out!')
+    redirect_to(root_path, notice: 'Logged out!')
   end
 end
