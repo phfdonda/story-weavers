@@ -41,17 +41,17 @@ ActiveRecord::Schema.define(version: 2020_07_28_140640) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.integer "priority"
+    t.string "name", null: false
+    t.integer "priority", default: 5
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
+    t.string "email", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.datetime "remember_created_at"
   end
 
   create_table "votes", force: :cascade do |t|
