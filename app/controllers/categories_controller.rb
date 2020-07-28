@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:category_id])
+    @category = Category.find_it(params[:id])
     @recent_articles = @category.articles_ord_by_recent
     @last_article = @recent_articles.first
   end
