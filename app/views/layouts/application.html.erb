@@ -9,8 +9,36 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
   <body>
+   <nav>
+      <img src="/" alt="logo" class="logo">
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/" class="nav-link">Write an Article</a>
+      </div>
+    </nav>
+
     <%= flash_msg %>
+
+    <main>
     <%= yield %>
+    </main>
+    <footer>
+      <img src="/" alt="logo" class="logo">
+      <div class="privacy-and-copyright">
+        <span class="privacy-terms">
+          <a href="/" class="privacy">Privacy Policy</a>
+          <a href="/" class="terms">Terms & Conditions</a>
+        </span>
+        <span class="copyright">
+          Copyright 2020. All rights reserved.
+        </span>
+      </div>
+      <div class="social">
+        <span class="connect">Connect with us:</span>
+      </div>
+    </footer>
   </body>
+
 </html>
