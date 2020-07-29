@@ -6,4 +6,10 @@ module HelperModuleRspec
     end
     click_button 'Log in'
   end
+
+  def prep_article
+    user
+    category
+    article
+  end
 end

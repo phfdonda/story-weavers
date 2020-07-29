@@ -4,7 +4,7 @@ class CreateArticles < ActiveRecord::Migration[6.0]
       t.string :title
       t.text :text
       t.references :category, foreign_key: true
-      t.references :author, class_name: 'User', foreign_key: true
+      t.references :author, foreign_key: { to_table: :users }
       t.timestamps
     end
   end

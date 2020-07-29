@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.feature 'Articles', type: :feature do
   context 'Users exist' do
-    # let(:quote) { Faker::Movies::StarWars.quote }
+    let(:quote) { Faker::Movies::StarWars.quote }
     let(:users_list) { create_list(:random_user, 10) }
     let(:categories_list) { create_list(:random_category, :with_random_priority, 10) }
     let(:articles_list) { create_list(:random_article, 10) }
 
-    it 'should be able to create a article' do
+    it 'should be able to create an article' do
       user = create(:random_user)
       login_user(user)
       visit 'articles'
