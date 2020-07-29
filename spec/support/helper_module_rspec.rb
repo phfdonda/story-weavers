@@ -4,7 +4,7 @@ module HelperModuleRspec
     within('form') do
       fill_in 'Name', with: user.name
     end
-    click_button 'Log in'
+    click_button 'Log In'
   end
 
   def prep_article

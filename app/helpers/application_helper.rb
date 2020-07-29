@@ -10,7 +10,15 @@ module ApplicationHelper
     end
   end
 
-  
+  def vote_unvote_btn(article)
+    vote = Vote.find_by(article: article, user: current_user)
+
+    if like
+      link_to('Unvote!', article_like_path(id: vote.id, article_id: article.id), method: :delete)
+    else
+      link_to('Vote!', article_likes_path(article_id: article.id), method: :post)
+    end
+  end
 
   # def logged_in_as
   #   if logged_in?

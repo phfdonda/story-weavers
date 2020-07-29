@@ -1,8 +1,12 @@
 class Article < ApplicationRecord
-  belongs_to :author, class_name: 'User', foreign_key: true
-  belongs_to :category, foreign_key: true
+  belongs_to :author, class_name: 'User'
+  belongs_to :category
   has_many :votes, dependent: :destroy
   has_one_attached :avatar
 
-  validates :text, length: { maximum: 500 }
+  scope :most_voted, -> { order(vote: :desc) }
+  scope :top_four, -> { limit(4) }
+  scope :top_ten, -> { limit(10) }
+
+  validates :text, length: { maximum: 1000 }
 end

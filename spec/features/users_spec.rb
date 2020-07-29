@@ -7,6 +7,5 @@ RSpec.feature 'Users', type: :feature do
     it 'successfully login the user' do
       login_user(user)
     end
-
   end
 end

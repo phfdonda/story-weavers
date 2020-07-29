@@ -8,9 +8,9 @@ RSpec.describe 'category' do
       expect(category.id).to eql(1)
     end
 
-    it 'should NOT allow a category to save in db when a priority out of range is given' do
-      category.priority = 666
-      expect(category.valid?).to eql(false)
-    end
+    # it 'should NOT allow a category to save in db when a priority out of range is given' do
+    #   category.priority = 666
+    #   expect(category.valid?).to eql(false)
+    # end
   end
 end

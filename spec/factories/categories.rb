@@ -1,6 +1,7 @@
 FactoryBot.define do
-  factory :random_category, class: 'Article' do
+  factory :random_category, class: 'Category' do
     name { Faker::Movies::StarWars.planet }
+    sequence(:id) { |n| n }
 
     trait :priority_1 do
       priority { 1 }

@@ -1,1 +1,9 @@
-Sign Up
+<div class="container">
+
+  <div class="form">
+    <h1>REGISTER</h1>
+    <%= render 'form-signup', session: @user %>
+    <p>Already have an account? </p>
+    <%= link_to 'Log In', login_path, method: :get %>
+  </div>
+</div>
