@@ -1,11 +1,13 @@
 class SessionsController < ApplicationController
+  before_action :authenticate_user!, except: %i[new create]
+
   def new
     redirect_to root_path unless current_user.nil?
   end
 
   def create
-    user = User.find_it_by_name(params[:session][:name])
-    if user.nil?
+    @user = User.find_it_by_name(params[:session][:name])
+    if @user.nil?
       redirect_to login_path, alert: 'Invalid name' unless params[:session][:name].split.empty?
       redirect_to login_path, alert: 'Don\'t you have a name, dear?' if params[:session][:name].split.empty?
     else

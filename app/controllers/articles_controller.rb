@@ -1,16 +1,14 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @article = Article.new
   end
 
   def create
-    if logged_in?
-      @article = current_user.articles.new(article_params)
+    @article = current_user.articles.new(article_params)
 
-      redirect_to articles_path, notice: 'Let the world be amazed! Your article was published!' if @article.save
-    else
-      redirect_to login_path, alert: 'You must be logged in to create an article'
-    end
+    redirect_to articles_path, notice: 'Let the world be amazed! Your article was published!' if @article.save
   end
 
   private

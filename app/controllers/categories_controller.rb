@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  # before_action :authenticate_user!
+
   def index
     # Change to order by priority
     @categories = Category.all.by_priority

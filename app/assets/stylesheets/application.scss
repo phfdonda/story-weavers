@@ -53,6 +53,15 @@
   padding: 0 15px;
  }
 
+ input{
+  width: 300px;
+  height: 40px;
+  display: block;
+}
+
+.button{
+  margin-top: 10px;
+}
  .logo {
    height: 60%;
    width: 100px;
@@ -63,23 +72,10 @@
   height: 20px;
  }
 
- .featured {
-   height: 50vh;
+ .container{
    width: 100%;
-  background-color: yellow;
- }
-
- .four-best{
-   height:30vh;
-   width: 100%;
-   display: flex;
- }
-
- .one-of-four{
    height: 100%;
-   width: 25%;
-   background-color: #7a7a7a; }
-
- .one-of-four:nth-child(odd){
-   background-color: #b5b5b5;
+   display: flex;
+   align-items: center;
+   justify-content: center;
  }

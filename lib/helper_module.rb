@@ -19,4 +19,10 @@ module HelperModule
     session.delete(:user_id)
     @current_user = nil
   end
+
+  def authenticate_user!
+    return if logged_in?
+
+    redirect_to login_path, notice: 'You have to be logged in!'
+  end
 end
