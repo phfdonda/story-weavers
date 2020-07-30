@@ -13,12 +13,12 @@ class SessionsController < ApplicationController
     else
       log_in user
       remember user
-      redirect_to root_path
+      redirect_to root_path, notice: 'Welcome, dear writer!'
     end
   end
 
   def destroy
     logout
-    redirect_to(root_path, notice: 'Logged out!')
+    redirect_to(root_path, notice: 'Buh-bye! Safe travels!')
   end
 end

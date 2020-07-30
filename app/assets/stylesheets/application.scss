@@ -68,6 +68,28 @@ a{
   text-decoration: none;
 }
 
+.flash{
+  display: flex;
+  opacity: 50%;
+  height: 10px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.flash p{
+  opacity: 100%;
+}
+
+.notice{
+  background-color: blue;
+}
+
+.alert{
+  background-color: orange;
+}
+
 .orange {
   color: orange;
 }

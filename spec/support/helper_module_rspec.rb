@@ -7,6 +7,13 @@ module HelperModuleRspec
     click_button 'Log In'
   end
 
+  def logout_user(user)
+    visit root_path
+    within('nav') do
+      click_button 'Log Out'
+    end
+  end
+
   def prep_article
     user
     category
