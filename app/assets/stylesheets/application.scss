@@ -27,15 +27,15 @@
     padding: 5px;
     width: 100vw;
     max-width: 100%;
-    height: 200vh;
+    height: 100vh;
   }
 
   main{
-    height: 200vh;
+    height: 80vh;
     width: 100%;
-   }
+  }
 
- nav{
+  nav{
   display: flex;
   position: sticky;
   height: 10vh;
@@ -55,6 +55,9 @@
   height: 10vh;
   align-items: center;
   padding: 0 15px;
+  color: white;
+  font-size: 0.9rem;
+
  }
 
  input{
@@ -97,6 +100,10 @@ a{
   width: 60%;
 }
 
+.privacy-terms{
+  padding-right: 20px;
+}
+
 .social{
   display: flex;
   justify-content: space-around;
@@ -105,8 +112,8 @@ a{
 }
 
 .social-logo{
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background-color: #fe6001;
   display:flex;
