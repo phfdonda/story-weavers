@@ -2,10 +2,9 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    # @category = Category.new
-    # @top_categories = Category.all.by_priority
-    # @featured_category = @top_categories.first
-    # @featured_article = @featured_category.most_voted.first
+    @top_categories = Category.all.by_priority
+    @featured_category = @top_categories.first
+    @featured_article = @featured_category.most_voted.first
   end
 
   def show
