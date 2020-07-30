@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'categories#index'
 
   get 'signup', to: 'users#new'
+  post 'signup', to:'users#create'
 
   # Routes for sessions
   get 'login', to: 'sessions#new'

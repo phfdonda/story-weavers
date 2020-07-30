@@ -14,9 +14,10 @@
    <nav>
       <a href="/" class="nav-logo"><img src="/" alt="logo" class="logo"></a>
       <div class="nav-links">
-        <%= logged_in_as %>
+
         <a href="/" class="nav-link">Home</a>
         <a href="/" class="nav-link">Write an Article</a>
+        <%= logged_in_as %>
       </div>
     </nav>
 
@@ -26,8 +27,10 @@
     <%= yield %>
     </main>
     <footer>
-      <img src="/" alt="logo" class="logo">
-      <div class="privacy-and-copyright">
+    <div class="foot-logo">
+      <a href="/"><img src="/" alt="logo" class="logo"></a>
+      </div>
+      <div class="privacy-and-copyright center">
         <span class="privacy-terms">
           <a href="/" class="privacy">Privacy Policy</a>
           <a href="/" class="terms">Terms & Conditions</a>
@@ -38,6 +41,9 @@
       </div>
       <div class="social">
         <span class="connect">Connect with us:</span>
+        <a href="/"><span class="social-logo center twitter"></span></a>
+        <a href="/"><span class="social-logo center instagram"></span></a>
+        <a href="/"><span class="social-logo center facebook"></span></a>
       </div>
     </footer>
   </body>

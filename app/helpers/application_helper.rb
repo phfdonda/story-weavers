@@ -24,7 +24,7 @@ module ApplicationHelper
     if logged_in?
       render 'layouts/welcome_user'
       # link_to 'Edit profile', edit_user_registration_path, class: 'navbar-link'
-      link_to 'Logout', logout_path, method: :delete, class: 'navbar-link'
+      link_to 'Log Out', logout_path, method: :delete, class: 'navbar-link'
     else
       link_to 'Register', signup_path, class: 'navbar-link'
       link_to 'Log In', login_path, class: 'navbar-link'

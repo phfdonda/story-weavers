@@ -14,18 +14,15 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       remember @user
-      redirect_to root_path
+      redirect_to root_path, notice: 'Yay! You are one of us now! A big welcome!!!'
     else
-      respond_to do |f|
-        f.html { render :new }
-        f.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+      render :new, alert: 'Oops, something went wrong...'
     end
   end
 
   private
 
-  def current_user
-    @current_user ||= User.return_current_user(session[:user_id]) if session[:user_id]
+  def user_params
+    params.require(:user).permit(:name, :email)
   end
 end

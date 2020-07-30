@@ -23,20 +23,21 @@
 
   body{
     background-color: #4e443f;
-    overflow: hidden;
+    overflow-x: hidden;
     padding: 5px;
     width: 100vw;
     max-width: 100%;
-    height: 100vh;
+    height: 200vh;
   }
 
   main{
-    height: 80vh;
+    height: 200vh;
     width: 100%;
    }
 
  nav{
   display: flex;
+  position: sticky;
   height: 10vh;
   background-color: white;
   align-items: center;
@@ -64,30 +65,64 @@
 }
 
 a{
-  color: orange;
+  color: #fe6001;
   text-decoration: none;
 }
 
-.flash{
+.center{
   display: flex;
-  opacity: 50%;
-  height: 10px;
-  width: 100%;
-  justify-content: center;
+   justify-content: center;
   align-items: center;
+}
+
+.flash{
+  height: 30px;
+  width: 100%;
   position: absolute;
 }
 
 .flash p{
-  opacity: 100%;
+  color: white;
 }
 
 .notice{
-  background-color: blue;
+  background-color: rgba(40, 13, 145,0.5);
 }
 
 .alert{
-  background-color: orange;
+  background-color: rgba(189, 102, 15, 0.5);
+}
+
+.privacy-and-copyright{
+  width: 60%;
+}
+
+.social{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 20%;
+}
+
+.social-logo{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #fe6001;
+  display:flex;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.twitter{
+  background-image: url(../../../docs/twitter.png);
+}
+.instagram{
+  background-image: url(../../../docs/instagram.png);
+}
+.facebook{
+  background-image: url(../../../docs/facebook.png);
 }
 
 .orange {
@@ -116,6 +151,10 @@ a{
 .nav-logo{
   height: 60%;
    width: 100px;
+}
+
+.foot-logo{
+  width: 20%;
 }
 
  .logo {
