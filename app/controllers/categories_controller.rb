@@ -2,9 +2,7 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @top_categories = Category.all.by_priority
-    @featured_category = @top_categories.first
-    @featured_article = @featured_category.most_voted.first
+    set_variables
   end
 
   def show
@@ -26,13 +24,16 @@ class CategoriesController < ApplicationController
   private
 
   def set_category
+    raise 'There are no categories created yet.' if Category.all.empty?
+
     @category = Category.find_it(params[:id])
   end
 
   def set_variables
     set_category
-    @recent_articles = @category.articles_ord_by_recent
+    @top_categories = Category.all.by_priority
     @last_article = @recent_articles.first
-    @last_four_articles = @recent_articles.top_four
+    @featured_category = @top_categories.first
+    @featured_article = @featured_category.most_voted.first
   end
 end

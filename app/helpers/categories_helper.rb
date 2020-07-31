@@ -4,5 +4,4 @@ module CategoriesHelper
       render partial: category_box, category: c
     end
   end
-
 end
