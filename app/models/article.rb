@@ -4,7 +4,7 @@ class Article < ApplicationRecord
   has_many :votes, dependent: :destroy
   has_one_attached :avatar
 
-  scope :most_voted, -> { order(vote: :desc) }
+  scope :most_voted, -> { order(:vote) }
   scope :top_four, -> { limit(4) }
   scope :top_ten, -> { limit(10) }
 

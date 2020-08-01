@@ -24,4 +24,5 @@ Article.populate 30 do |a|
   a.title = Faker::Movies::StarWars.character
   a.text = Faker::Movies::StarWars.quote
   n = 0 if n > 9
+  sleep(0.4)
 end

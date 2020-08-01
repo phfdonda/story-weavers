@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
   end
 
   def update_priority(new_level)
-    raise 'Priority can be only from 1 to 10.' unless (1..10).include?(new_level)
+    raise 'Priority can be only from 1 to 5.' unless (1..5).include?(new_level)
 
     set_category
     @category.priority = new_level
@@ -30,10 +30,10 @@ class CategoriesController < ApplicationController
   end
 
   def set_variables
-    set_category
+    # set_category
     @top_categories = Category.all.by_priority
-    @last_article = @recent_articles.first
+    @last_article =
     @featured_category = @top_categories.first
-    @featured_article = @featured_category.most_voted.first
+    @featured_article = @featured_category.articles.most_voted.first
   end
 end
