@@ -36,6 +36,6 @@ class CategoriesController < ApplicationController
   def set_variables
     # set_category
     @top_categories = Category.all.by_priority
-    @featured_category = @top_categories.first
+    @featured = @top_categories.first
   end
 end
