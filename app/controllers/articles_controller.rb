@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
   def index
     @category = Category.find_it(params[:id])
     @articles = @category.articles_ord_by_recent unless @category.empty?
+    @featured_article = Article.all.most_voted.first
   end
 
   def create

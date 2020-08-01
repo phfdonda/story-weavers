@@ -23,6 +23,10 @@ class CategoriesController < ApplicationController
 
   private
 
+  def category_params
+    params.require(:category).permit(:name, :priority)
+  end
+
   def set_category
     raise 'There are no categories created yet.' if Category.all.empty?
 
@@ -32,8 +36,6 @@ class CategoriesController < ApplicationController
   def set_variables
     # set_category
     @top_categories = Category.all.by_priority
-    @last_article =
     @featured_category = @top_categories.first
-    @featured_article = @featured_category.articles.most_voted.first
   end
 end

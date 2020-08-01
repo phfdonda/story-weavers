@@ -59,14 +59,17 @@ ActiveRecord::Schema.define(version: 2020_07_28_202009) do
   end
 
   create_table "votes", force: :cascade do |t|
+    t.integer "user_id"
     t.integer "article_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["article_id"], name: "index_votes_on_article_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "articles", "categories"
   add_foreign_key "articles", "users", column: "author_id"
   add_foreign_key "votes", "articles"
+  add_foreign_key "votes", "users"
 end
