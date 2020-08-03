@@ -3,6 +3,7 @@ class CreateVotes < ActiveRecord::Migration[6.0]
     create_table :votes do |t|
       t.references :user, index: true, foreign_key: true
       t.references :article, index: true, foreign_key: true
+      t.references
       t.timestamps
     end
   end

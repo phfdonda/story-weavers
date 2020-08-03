@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_07_28_202009) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "text"
+    t.integer "n_of_votes", default: 0
     t.integer "category_id"
     t.integer "author_id"
     t.datetime "created_at", precision: 6, null: false

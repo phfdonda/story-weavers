@@ -8,17 +8,14 @@
   background-color: yellow;
  }
 
- .four-best{
+ .row{
    height:30vh;
    width: 100%;
    display: flex;
  }
 
- .one-of-four{
+ .box{
    height: 100%;
    width: 25%;
-   background-color: #7a7a7a; }
-
- .one-of-four:nth-child(odd){
-   background-color: #b5b5b5;
- }
+   background-color: #7a7a7a;
+}

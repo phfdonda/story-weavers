@@ -30,4 +30,8 @@ module ApplicationHelper
       link_to 'Log In', login_path, class: 'navbar-link'
     end
   end
+
+  # def create_row(content, index)
+  #   if
+  # end
 end

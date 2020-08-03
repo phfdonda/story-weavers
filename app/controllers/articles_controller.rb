@@ -1,9 +1,13 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!
 
+  def show
+    @article = Article.find_it(params[:id])
+  end
+
   def index
     @category = Category.find_it(params[:id])
-    @articles = @category.articles_ord_by_recent unless @category.empty?
+    @articles = @category.includes(:articles).articles_ord_by_recent unless @category.empty?
   end
 
   def create

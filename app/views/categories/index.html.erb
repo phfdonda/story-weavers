@@ -1,4 +1,8 @@
 <div class="featured">
-  <%= render 'categories/featured' %>
+  <%= render partial: 'articles/featured', locals: {featured_article: @featured_article} %>
 </div>
-<%= categories_rows %>
+<div class="categories-rows">
+<% @name_with_latest_article.each do |name,article| %>
+  <%= render partial: 'category_box', locals: { name: name, article: article } %>
+<% end %>
+</div>

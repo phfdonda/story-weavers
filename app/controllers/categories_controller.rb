@@ -33,9 +33,25 @@ class CategoriesController < ApplicationController
     @category = Category.find_it(params[:id])
   end
 
+  def make_rows(list)
+    row = []
+    rows = []
+    list.each_with_index do |item, index|
+      row << item
+      if (index % 4).zero?
+        rows << row
+        row = []
+      elsif index == list.size
+        rows << row
+      end
+    end
+    rows
+  end
+
   def set_variables
-    # set_category
-    @top_categories = Category.all.by_priority
+    @top_categories = Category.by_priority
     @featured = @top_categories.first
+    @featured_article = Article.includes(:category).most_voted.first
+    @name_with_latest_article = Category.name_with_latest_article
   end
 end

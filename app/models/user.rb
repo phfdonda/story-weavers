@@ -4,8 +4,4 @@ class User < ApplicationRecord
 
   has_many :votes, foreign_key: 'user_id'
   has_many :articles, foreign_key: 'author_id'
-
-  def self.return_current_user(session)
-    find_by(id: session)
-  end
 end
