@@ -13,10 +13,22 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.articles.new(article_params)
 
-    redirect_to articles_path, notice: 'Let the world be amazed! Your article was published!' if @article.save
+    if new_article(@article) && @article.save
+      redirect_to root_path, notice: 'Let the world be amazed! Your article was published!'
+    else
+      redirect_to root_path, alert: 'Another great post lost to the Internet limbo'
+    end
   end
 
   private
+
+  def new_article(article)
+    a = article
+    c = Category.find_it(article.category_id)
+    return true if c.update(last_title: a.title)
+
+    false
+  end
 
   def article_params
     params.require(:article).permit(:author_id, :title, :text, :category_id)

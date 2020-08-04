@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
+  get 'new_article', to: 'articles#new'
+  post 'new_article', to: 'articles#create'
+
   resources :users, only: %i[index show] do
     resources :votes
   end

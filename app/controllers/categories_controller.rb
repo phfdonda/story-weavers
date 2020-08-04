@@ -52,6 +52,5 @@ class CategoriesController < ApplicationController
     @top_categories = Category.by_priority
     @featured = @top_categories.first
     @featured_article = Article.includes(:category).most_voted.first
-    @name_with_latest_article = Category.name_with_latest_article
   end
 end

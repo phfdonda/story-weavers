@@ -1,0 +1,25 @@
+<%= simple_form_for(:article, url: new_article_path) do |f| %>
+
+    <div class="field">
+      <%= f.label :name, 'Title ' %>
+      <%= f.input_field :title,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "title" }%>
+    </div>
+    <div class="field">
+      <%= f.label :name, 'Category ' %>
+      <br>
+      <%= f.input_field :category_id,
+                collection: Category.categories_list,
+                input_html: { autocomplete: "category" }%>
+    </div>
+    <div class="field">
+      <%= f.label :text, 'Text ' %>
+      <br>
+      <%= f.input_field :text,
+                as: :text,
+                input_html: { autocomplete: "text" }%>
+    </div>
+  <%= f.button :submit, "Submit your Article!"%>
+<% end %>

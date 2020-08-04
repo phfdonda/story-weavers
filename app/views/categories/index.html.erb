@@ -2,7 +2,7 @@
   <%= render partial: 'articles/featured', locals: {featured_article: @featured_article} %>
 </div>
 <div class="categories-rows">
-<% @name_with_latest_article.each do |name,article| %>
-  <%= render partial: 'category_box', locals: { name: name, article: article } %>
+<% @top_categories.each do |category| %>
+  <%= render partial: 'category_box', locals: { name: category.name, article: category.last_title } %>
 <% end %>
 </div>
