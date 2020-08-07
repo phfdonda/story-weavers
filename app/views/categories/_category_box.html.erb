@@ -1,5 +1,5 @@
 <span class="box">
-  <%=category.last_article  %>
-  <p class="title categ-name"> <%= category.name %></p>
-  <p class="title last-article-title"><%= category.last_title %> </p>
+  <%= display_image(article)  %>
+  <p class="title categ-name"> <%= category_last_article.category_name %></p>
+  <p class="title last-article-title"><%= category_last_article.title %> </p>
 </span>

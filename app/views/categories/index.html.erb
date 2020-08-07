@@ -2,7 +2,8 @@
   <%= render partial: 'articles/featured', locals: {featured_article: @featured_article} %>
 </div>
 <div class="categories-rows">
-<% @top_categories.each do |category| %>
-  <%= render partial: 'category_box', locals: { category: category} %>
+<% @categories_last_articles.each do |category_last_article| %>
+  <% @article = @last_articles_list.where(id: category_last_article.id) %>
+  <%= render partial: 'category_box', locals: { category_last_article: category_last_article, article: @article } %>
 <% end %>
 </div>

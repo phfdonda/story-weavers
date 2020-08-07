@@ -78,16 +78,18 @@ ActiveRecord::Schema.define(version: 2020_08_05_210607) do
   add_foreign_key "votes", "users"
 
   create_view "last_articles", sql_definition: <<-SQL
-      SELECT articles.id,
-      articles.title,
-      articles.text,
-      articles.n_of_votes,
-      articles.category_id,
-      articles.author_id,
-      articles.created_at,
-      articles.updated_at,
-      max(articles.id) OVER (PARTITION BY articles.category_id) AS max
-     FROM articles
-    ORDER BY articles.id DESC;
+      SELECT la.id,
+      la.title,
+      c.id AS category_id,
+      c.name AS category_name
+     FROM (categories c
+       JOIN ( SELECT articles.id,
+              articles.title,
+              articles.category_id
+             FROM articles
+            WHERE (articles.id IN ( SELECT max(articles_1.id) OVER (PARTITION BY articles_1.category_id) AS max
+                     FROM articles articles_1
+                    ORDER BY articles_1.id DESC))) la ON ((c.id = la.category_id)))
+    ORDER BY c.priority;
   SQL
 end

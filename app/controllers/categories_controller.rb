@@ -52,5 +52,8 @@ class CategoriesController < ApplicationController
     @top_categories = Category.includes(:articles).by_priority
     @featured = @top_categories.first
     @featured_article = Article.includes(:category).most_voted.first
+    @categories_last_articles = LastArticle.all
+    @last_articles_list = Article.all.where(id: LastArticle.ids)
+    @images = ActiveStorageAttachment.all.where(record_id: LastArticle.ids)
   end
 end

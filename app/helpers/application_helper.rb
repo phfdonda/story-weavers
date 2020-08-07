@@ -31,7 +31,7 @@ module ApplicationHelper
     end
   end
 
-  def self.display_image
-    image_tag image if image.attached?
+  def display_image(article)
+    image_tag @images.all.where(record_id: article.first.id), class: 'last_article_img' if article.first.image.attached?
   end
 end
