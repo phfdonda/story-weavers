@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.articles.new(article_params)
 
-    if new_article(@article) && @article.save
+    if new_article(@article)
       redirect_to root_path, notice: 'Let the world be amazed! Your article was published!'
     else
       redirect_to root_path, alert: 'Another great post lost to the Internet limbo'
@@ -25,12 +25,12 @@ class ArticlesController < ApplicationController
   def new_article(article)
     a = article
     c = Category.find_it(article.category_id)
-    return true if c.update(last_title: a.title)
-
-    false
+    article.save
+    c.update(last_title: a.title, last_article_id: article.id)
+    c.save
   end
 
   def article_params
-    params.require(:article).permit(:author_id, :title, :text, :category_id)
+    params.require(:article).permit(:author_id, :title, :text, :category_id, :image)
   end
 end

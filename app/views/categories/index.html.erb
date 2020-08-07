@@ -3,6 +3,6 @@
 </div>
 <div class="categories-rows">
 <% @top_categories.each do |category| %>
-  <%= render partial: 'category_box', locals: { name: category.name, article: category.last_title } %>
+  <%= render partial: 'category_box', locals: { category: category} %>
 <% end %>
 </div>

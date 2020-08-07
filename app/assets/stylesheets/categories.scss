@@ -5,7 +5,7 @@
  .featured {
    height: 50vh;
    width: 100%;
-  background-color: yellow;
+   padding: 20px;
  }
 
  .row{
@@ -13,9 +13,3 @@
    width: 100%;
    display: flex;
  }
-
- .box{
-   height: 100%;
-   width: 25%;
-   background-color: #7a7a7a;
-}

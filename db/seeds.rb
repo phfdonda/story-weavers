@@ -11,7 +11,7 @@ n = 0
 
 User.populate 10 do |u|
   u.name = Faker::Name.first_name
-  u.email = Faker::Internet.emwail
+  u.email = Faker::Internet.email
 end
 Category.populate 10 do |c|
   c.name = Faker::Movies::StarWars.planet

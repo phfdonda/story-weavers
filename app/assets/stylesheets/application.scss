@@ -125,7 +125,6 @@ label{
   margin-right: 10px;
 }
 
-
 .button{
   cursor: pointer;
   margin: 15px 0;
@@ -149,23 +148,13 @@ label{
   background-size: contain;
 }
 
-// .twitter{
-//   background-image: url(../../../docs/twitter.png);
-// }
-// .instagram{
-//   background-image: url(../../../docs/instagram.png);
-// }
-// .facebook{
-//   background-image: url(../../../docs/facebook.png);
-// }
-
 .orange {
   color: orange;
 }
 
 .title{
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .form{
@@ -226,9 +215,14 @@ label{
  .box{
    width: 25%;
    height: 30vh;
-   padding: 10px;
+   padding: 20px;
    background-color: #7a7a7a;
    display:flex;
    flex-direction: column;
    justify-content: space-between;
+ }
+
+ .categ-name{
+   color: white;
+
  }

@@ -31,7 +31,7 @@ module ApplicationHelper
     end
   end
 
-  # def create_row(content, index)
-  #   if
-  # end
+  def self.display_image
+    image_tag image if image.attached?
+  end
 end

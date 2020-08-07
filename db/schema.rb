@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_03_192936) do
+ActiveRecord::Schema.define(version: 2020_08_05_210607) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
-    t.integer "record_id", null: false
-    t.integer "blob_id", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
@@ -37,8 +40,8 @@ ActiveRecord::Schema.define(version: 2020_08_03_192936) do
     t.string "title"
     t.text "text"
     t.integer "n_of_votes", default: 0
-    t.integer "category_id"
-    t.integer "author_id"
+    t.bigint "category_id"
+    t.bigint "author_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["author_id"], name: "index_articles_on_author_id"
@@ -48,8 +51,6 @@ ActiveRecord::Schema.define(version: 2020_08_03_192936) do
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
     t.integer "priority", default: 5
-    t.string "last_title"
-    t.integer "last_article_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -62,8 +63,8 @@ ActiveRecord::Schema.define(version: 2020_08_03_192936) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "article_id"
+    t.bigint "user_id"
+    t.bigint "article_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["article_id"], name: "index_votes_on_article_id"
@@ -75,4 +76,18 @@ ActiveRecord::Schema.define(version: 2020_08_03_192936) do
   add_foreign_key "articles", "users", column: "author_id"
   add_foreign_key "votes", "articles"
   add_foreign_key "votes", "users"
+
+  create_view "last_articles", sql_definition: <<-SQL
+      SELECT articles.id,
+      articles.title,
+      articles.text,
+      articles.n_of_votes,
+      articles.category_id,
+      articles.author_id,
+      articles.created_at,
+      articles.updated_at,
+      max(articles.id) OVER (PARTITION BY articles.category_id) AS max
+     FROM articles
+    ORDER BY articles.id DESC;
+  SQL
 end
