@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    set_variables
+    @all_category_articles = Category.find_it(params[:id]).articles.all.ord_by_recent
   end
 
   def update_priority(new_level)

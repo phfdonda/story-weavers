@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
 
   def index
     @category = Category.find_it(params[:id])
-    @articles = @category.includes(:articles).articles_ord_by_recent unless @category.empty?
+    @articles = @category.recent_articles unless @category.nil?
   end
 
   def create

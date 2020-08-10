@@ -85,16 +85,29 @@ label{
 }
 
 
-.center{
+@mixin center{
   display: flex;
-   justify-content: center;
+  justify-content: center;
   align-items: center;
+}
+
+@mixin bkg-img{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin truncate-txt{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .flash{
   height: 30px;
   width: 100%;
   position: absolute;
+  @include center;
 }
 
 .flash p{
@@ -111,6 +124,7 @@ label{
 
 .privacy-and-copyright{
   width: 60%;
+  @include center;
 }
 
 .privacy-and-copyright a:hover{
@@ -143,9 +157,7 @@ label{
   border-radius: 50%;
   background-color: #fe6001;
   display:flex;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  @include bkg-img
 }
 
 .orange {
@@ -162,10 +174,12 @@ label{
   width: 70vw;
   height: auto;
   padding: 50px;
-  display: flex;
+  @include center;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+}
+
+.field{
+  margin-top: 15px;
 }
 
 .button{
@@ -194,11 +208,8 @@ label{
  .container{
    width: 100%;
    height: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+   @include center;
  }
-
 
 .other-form{
   font-size: 1.2rem;
@@ -213,16 +224,51 @@ label{
 }
 
  .box{
-   width: 25%;
-   height: 30vh;
-   padding: 20px;
+   width: 50%;
+   height: 40vh;
+   position:relative;
    background-color: #7a7a7a;
    display:flex;
    flex-direction: column;
    justify-content: space-between;
+   @include truncate-txt();
+ }
+
+ .box-img{
+   width: 100%;
+   height: 100%;
+   @include bkg-img
  }
 
  .categ-name{
    color: white;
+ }
 
+ .titles{
+   height: 100%;
+   width: 100%;
+   display: flex;
+   flex-flow: column;
+   justify-content: space-between;
+   padding: 20px;
+ }
+
+ .article_index_row{
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+ }
+
+ .article-two-boxes{
+   @include center;
+
+   width: 50%;
+  }
+
+  .box-img{
+    @include bkg-img;
+  }
+
+ .article-two-boxes:nth-child(odd){
+   flex-direction: row-reverse;
  }
