@@ -5,10 +5,10 @@
 </div>
 <div class="categories-rows">
 
-    <% @categories_last_articles.each do |category_last_article| %>
+    <% @last_articles_list.each do |article| %>
 
-        <% @article = @last_articles_list.where(id: category_last_article.id) %>
-        <%= render partial: 'category_box', locals: { category_last_article: category_last_article, article: @article } %>
+        <%= render partial: 'category_box', locals: { article: article } %>
     <% end %>
 
 </div>
+<%= will_paginate @last_articles_list %>

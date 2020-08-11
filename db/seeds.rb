@@ -24,6 +24,7 @@ Article.populate 30 do |a|
   a.n_of_votes = 0
   a.title = Faker::Movies::StarWars.character
   a.text = Faker::Movies::StarWars.quote
+  a.category_name = Category.find(n).name
   n = 0 if n > 9
   sleep(0.4)
 end

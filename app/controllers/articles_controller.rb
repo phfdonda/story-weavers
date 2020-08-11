@@ -12,6 +12,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.new(article_params)
+    @article.category_name = Category.find_it(article_params[:category_id]).name
 
     if @article.save
       redirect_to root_path, notice: 'Let the world be amazed! Your article was published!'

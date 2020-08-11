@@ -12,10 +12,6 @@ class Category < ApplicationRecord
     true
   end
 
-  def self.last_articles
-    select('id, name').where(id: LastArticle.select('category_id')).order(:priority)
-  end
-
   def self.categories_list
     categories_list = []
     Category.all.each do |c|

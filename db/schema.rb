@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_08_05_210607) do
     t.text "text"
     t.integer "n_of_votes", default: 0
     t.bigint "category_id"
+    t.string "category_name"
     t.bigint "author_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

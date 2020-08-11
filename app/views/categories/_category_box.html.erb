@@ -1,13 +1,13 @@
 <span class="box">
 
-  <div class="box-img" style='background-image: url(<%= display_image(article.first.image)  %>);'>
-    <a href="<%= 'category/show/' + category_last_article.category_id.to_s %>">
+  <div class="box-img" style='background-image: url(<%= display_image(article.image)  %>);'>
+    <a href="<%= 'category/show/' + article.category_id.to_s %>">
       <div class="titles">
         <p class="title categ-name">
-          <%= category_last_article.category_name %>
+          <%= article.category_name %>
         </p>
         <p class="title last-article-title">
-          <%= category_last_article.title %>
+          <%= article.title %>
         </p>
       </div>
     </a>
