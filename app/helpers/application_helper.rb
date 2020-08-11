@@ -11,10 +11,10 @@ module ApplicationHelper
   end
 
   def vote_unvote_btn(article)
-    vote = Vote.find_by(article: article, user: current_user)
+    vote = Vote.find_by(article_id: article.id, user_id: current_user.id)
 
     if vote
-      link_to('Unvote', articles_votes_path(id: vote.id, article_id: article.id), method: :delete)
+      link_to('Unvote', article_votes_path(article_id: article.id), method: :delete)
     else
       link_to('Vote', article_votes_path(article_id: article.id, user_id: current_user.id), method: :post)
     end

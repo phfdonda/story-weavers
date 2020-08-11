@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post 'new_article', to: 'articles#create'
 
   get 'category/show/:id', to: 'articles#index'
+  delete 'articles/:id/votes', to: 'votes#destroy'
 
   resources :users, only: %i[index show] do
     resources :votes
