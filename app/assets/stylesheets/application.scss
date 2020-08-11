@@ -261,7 +261,7 @@ label{
 
  .article-two-boxes{
    @include center;
-
+   display: flex;
    width: 50%;
   }
 

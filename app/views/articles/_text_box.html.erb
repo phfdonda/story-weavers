@@ -9,6 +9,10 @@
         <p class="title article-text">
           <%= article.text %>
         </p>
+        <p class="title article-text">
+          By <%= article.author.name %>
+        </p>
+        <%= vote_unvote_btn(article) %>
       </div>
   </div>
 </span>

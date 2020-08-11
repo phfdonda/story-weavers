@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'categories#index'
 
   get 'signup', to: 'users#new'
-  post 'signup', to:'users#create'
+  post 'signup', to: 'users#create'
 
   # Routes for sessions
   get 'login', to: 'sessions#new'
@@ -18,8 +18,9 @@ Rails.application.routes.draw do
     resources :votes
   end
   resources :categories do
-    resources :articles, only: %i[index create] do
-      resources :votes, only: %i[create destroy]
-    end
+    resources :articles, only: %i[index create]
+  end
+  resources :articles, only: %i[index create] do
+    resources :votes, only: %i[create destroy]
   end
 end

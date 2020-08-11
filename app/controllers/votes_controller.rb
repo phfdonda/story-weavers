@@ -3,7 +3,7 @@ class VotesController < ApplicationController
 
   def create
     @vote = current_user.votes.new(article_id: params[:article_id])
-    @article = Article.find_it(:article_id)
+    @article = Article.find_it(params[:article_id])
     @article.n_of_votes += 1
     redirect_to articles_path, notice: 'This article got your vote! Lucky one!' if @vote.save && @article.save
   end
