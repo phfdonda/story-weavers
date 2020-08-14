@@ -3,10 +3,9 @@
     <%= render partial: 'articles/featured', locals: {featured_article: @featured_article} %>
   </a>
 </div>
-<div class="categories-rows">
+<div class="row-set">
 
     <% @last_articles_list.each do |article| %>
-
         <%= render partial: 'category_box', locals: { article: article } %>
     <% end %>
 
