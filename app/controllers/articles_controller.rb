@@ -8,6 +8,8 @@ class ArticlesController < ApplicationController
   def index
     @category = Category.find_it(params[:id])
     @articles = @category.recent_articles unless @category.nil?
+    @article_pairs = []
+    @articles.each_slice(2) { |a| @article_pairs << a }
   end
 
   def create

@@ -1,18 +1,17 @@
-<span class="box">
+<span class="article-box">
       <div class="titles">
         <h6 class="title categ-name">
           <%= @category.name %>
         </h6>
         <h6 class="title article-title">
-          <%= article.title %>
+          <%= article.title.truncate(28) %>
         </h6>
         <p class="title article-text">
-          <%= article.text %>
+          <%= article.text.truncate(40) %>
         </p>
         <p class="title article-text">
           By <%= article.author.name %>
         </p>
         <%= vote_unvote_btn(article) %>
       </div>
-  </div>
 </span>

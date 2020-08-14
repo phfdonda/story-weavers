@@ -1,13 +1,13 @@
 <span class="box">
-
-  <div class="box-img" style='background-image: url(<%= display_image(article.image)  %>);'>
+  <% article = item %>
+  <div class="box-img" style='background-image: url(<%= display_image(article.image) %>);'>
     <a href="<%= 'category/show/' + article.category_id.to_s %>">
       <div class="titles">
         <p class="title categ-name">
           <%= article.category_name %>
         </p>
         <p class="title last-article-title">
-          <%= article.title %>
+          <%= article.title.truncate(28) %>
         </p>
       </div>
     </a>

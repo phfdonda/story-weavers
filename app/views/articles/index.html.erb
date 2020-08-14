@@ -1,9 +1,1 @@
-<div class="article_index_row">
-    <% @articles.each do |article| %>
-        <div class="article-two-boxes">
-            <%= render partial: 'img_box', locals: { article: article } %>
-            <%= render partial: 'text_box', locals: { article: article   } %>
-        </div>
-    <% end %>
-
-</div>
+<%= make_article_rows(@article_pairs) %>

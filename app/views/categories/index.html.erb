@@ -4,11 +4,6 @@
   </a>
 </div>
 <div class="categories-rows">
-
-    <% @last_articles_list.each do |article| %>
-
-        <%= render partial: 'category_box', locals: { article: article } %>
-    <% end %>
-
+ <%= make_rows_html(@last_articles_list, 'categories/category_box') %>
 </div>
 <%= will_paginate @last_articles_list %>

@@ -95,6 +95,7 @@ label{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-clip: border-box;
 }
 
 @mixin truncate-txt{
@@ -216,23 +217,37 @@ label{
   margin-top: 5px;
 }
 
-.categories-rows{
+@mixin row{
   display:flex;
-  width: 100vw;
   max-width: 100%;
   flex-wrap: wrap;
+  height: 40vh;
 }
 
- .box{
-   width: 50%;
-   height: 40vh;
+ .half-row{
+   @include row;
+   max-width: 50%;
+  }
+
+   @mixin box{
+   height: 100%;
    position:relative;
    background-color: #7a7a7a;
    display:flex;
    flex-direction: column;
    justify-content: space-between;
    @include truncate-txt();
+  }
+
+ .box{
+   width: 25%;
+  @include box;
  }
+
+  .article-box{
+    @include box;
+    width: 50%;
+  }
 
  .box-img{
    width: 100%;
@@ -259,16 +274,33 @@ label{
   flex-wrap: wrap;
  }
 
- .article-two-boxes{
-   @include center;
-   display: flex;
-   width: 50%;
-  }
 
-  .box-img{
-    @include bkg-img;
-  }
-
- .article-two-boxes:nth-child(odd){
+ .row:nth-child(odd){
    flex-direction: row-reverse;
  }
+
+ .featured {
+  height: 50vh;
+  width: 100%;
+  @include bkg-img;
+ }
+
+ .featured .titles{
+  justify-content: flex-end;
+  flex-direction: column;
+ }
+
+ .row{
+   height:30vh;
+   width: 100%;
+   display: flex;
+ }
+
+ .article-title{
+  color: black;
+
+}
+
+.article-text{
+  font-size: 0.7rem;
+}

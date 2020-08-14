@@ -1,5 +1,5 @@
-<span class="box">
-    <a href="<%= 'articles/show/' + article.id.to_s %>">
+<span class="article-box">
+    <a href="<%= 'articles/show/' + article.id.to_s %>" class="box-img">
       <div class="box-img" style='background-image: url(<%= display_image(article.image)  %>);'></div>
     </a>
 </span>
