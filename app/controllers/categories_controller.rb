@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @all_category_articles = Category.find_it(params[:id]).articles.all.ord_by_recent
+    @all_category_articles = Category.find_it(params[:id]).articles.all.most_recent
   end
 
   def update_priority(new_level)
@@ -31,21 +31,6 @@ class CategoriesController < ApplicationController
     raise 'There are no categories created yet.' if Category.all.empty?
 
     @category = Category.find_it(params[:id])
-  end
-
-  def make_rows(list)
-    row = []
-    rows = []
-    list.each_with_index do |item, index|
-      row << item
-      if (index % 4).zero?
-        rows << row
-        row = []
-      elsif index == list.size
-        rows << row
-      end
-    end
-    rows
   end
 
   def set_variables

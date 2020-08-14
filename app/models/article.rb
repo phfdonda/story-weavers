@@ -5,7 +5,7 @@ class Article < ApplicationRecord
   has_one_attached :image
 
   scope :most_voted, -> { order(n_of_votes: :desc) }
-  scope :most_recent, -> { order(:created_at) }
+  scope :most_recent, -> { order(id: :desc) }
 
   validates :text, length: { maximum: 1000 }
 

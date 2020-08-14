@@ -225,7 +225,7 @@ label{
 
  .box{
    width: 50%;
-   height: 40vh;
+   height: 100%;
    position:relative;
    background-color: #7a7a7a;
    display:flex;
@@ -253,22 +253,28 @@ label{
    padding: 20px;
  }
 
- .article_index_row{
+ .row-set{
   width: 100%;
+  max-height: 100%;
   flex-direction: row;
   flex-wrap: wrap;
  }
 
- .article-two-boxes{
+ .row{
+   height: 50vh;
+ }
+
+ .half-row{
    @include center;
    display: flex;
    width: 50%;
+   height: 100%;
   }
 
   .box-img{
     @include bkg-img;
   }
 
- .article-two-boxes:nth-child(odd){
+ .row:nth-child(odd) .half-row{
    flex-direction: row-reverse;
  }
