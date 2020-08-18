@@ -14,6 +14,34 @@
  *= require_self
  */
 
+ // ***** VARIABLES ******
+
+  $brown: #4c443f;
+  $yellow: #f99c00;
+  $orange: #fe6001;
+
+  // ***** MIXINs *****
+
+  @mixin center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+  @mixin bkg-img{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @mixin truncate-txt{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  // ***** TAGs *****
+
   *{
     margin: 0;
     padding: 0;
@@ -31,6 +59,7 @@
 
   main{
     height: auto;
+    min-height: 80vh;
     width: 100%;
   }
 
@@ -44,7 +73,7 @@
   padding: 0 15px;
  }
 
- nav a{
+  nav a{
   color: grey;
   text-transform: uppercase;
   margin: 0 5px;
@@ -52,7 +81,7 @@
  }
 
  nav a:hover{
-  color: #fe6001;
+  color: $orange;
  }
 
  footer{
@@ -74,34 +103,17 @@
 }
 
 a{
-  color: #fe6001;
+  color: $orange;
   text-decoration: none;
 }
 
 label{
  font-size: 1rem;
  font-weight: bolder;
- color: #fe6001;
+ color: $orange;
 }
 
-
-@mixin center{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin bkg-img{
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-@mixin truncate-txt{
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+// ***** CLASSES *****
 
 .flash{
   height: 30px;
@@ -155,7 +167,7 @@ label{
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #fe6001;
+  background-color: $orange;
   display:flex;
   @include bkg-img
 }
@@ -167,6 +179,15 @@ label{
 .title{
   font-weight: bold;
   font-size: 1rem;
+}
+
+.titles{
+  width: 100%;
+  height: 100%;
+   padding: 20px;
+   display: flex;
+   flex-flow: column;
+   justify-content: space-between;
 }
 
 .form{
@@ -186,20 +207,29 @@ label{
   margin-top: 15px;
 }
 
-.nav-logo{
-  height: 60%;
-   width: 100px;
-}
-
-.foot-logo{
-  width: 20%;
+.logged{
+  width: 200px;
+  display: flex;
+  justify-content: flex-end;
 }
 
  .logo {
-   height: 60%;
-   width: 100px;
-   background-color: red;
+  text-transform: none;
+  font-size: 1.5rem;
+  margin-left: 30px;
+  width: 200px;
+  @include center;
+  justify-content: flex-start;
+  height: 50%;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 700;
+  border-bottom:  medium solid $orange;
  }
+
+ footer .logo:hover{
+  color: white;
+  border-bottom-color: white;
+}
 
  .nav-links {
   height: 20px;
@@ -217,14 +247,19 @@ label{
   }
 
  .box{
-   width: 50%;
    height: 100%;
+   width: 100%;
    position:relative;
    background-color: #7a7a7a;
    display:flex;
    flex-direction: column;
    justify-content: space-between;
    @include truncate-txt();
+   white-space: normal;
+ }
+
+ .last-article-title {
+   color: $brown;
  }
 
  .box-img{
@@ -233,11 +268,23 @@ label{
    @include bkg-img
  }
 
- .categ-name{
-   color: white;
+ .category-link {
+   width: 100%;
+   height: 100%;
  }
 
- .titles{
+ .text-box{
+   background-color: white;
+ }
+
+ .categ-name {
+   color: white;
+   font-weight: 700;
+   width: 30%;
+  border-bottom: medium solid $yellow;
+ }
+
+ .article-content{
    height: 100%;
    width: 100%;
    display: flex;
@@ -245,6 +292,22 @@ label{
    justify-content: space-between;
    padding: 20px;
  }
+
+  .article-content .categ-name {
+    color: $yellow;
+    margin-bottom: 10px;
+  }
+
+ .article-author{
+   font-size: 0.8rem;
+ }
+
+ .article-text{
+   overflow-wrap: break-word;
+   font-size: 0.9rem;
+   font-weight: 500;
+   padding: 10px 0;
+  }
 
  .row-set{
   display: flex;
@@ -272,3 +335,31 @@ label{
  .row:nth-child(odd) .half-row{
    flex-direction: row-reverse;
  }
+
+ .pagination{
+   width: 100%;
+   height: 30px;
+   padding: 30px;
+   background-color: white;
+   @include center;
+ }
+
+ .featured {
+   height: 50vh;
+   width: 100%;
+   padding: 20px;
+ }
+
+ .row{
+   height:30vh;
+   width: 100%;
+   display: flex;
+ }
+
+ .article-title{
+  color: black;
+}
+
+.article-text{
+  font-size: 0.7rem;
+}

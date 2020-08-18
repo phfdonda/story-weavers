@@ -4,7 +4,7 @@
     <title>StoryWeavers</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="application">
+     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,14 +12,16 @@
 
   <body>
    <nav>
-      <a href="/" class="nav-logo"><img src="/" alt="logo" class="logo"></a>
+      <a href="/" class="logo">storyWEavers</a>
       <div class="nav-links">
 
         <a href="/" class="nav-link">Home</a>
         <a href="/new_article" class="nav-link">Write an Article</a>
 
       </div>
+      <div class="logged">
       <%= logged_in_as %>
+      </div>
     </nav>
 
     <%= flash_msg %>
@@ -28,8 +30,8 @@
     <%= yield %>
     </main>
     <footer>
-    <div class="foot-logo">
-      <a href="/"><img src="/" alt="logo" class="logo"></a>
+    <div>
+      <a href="/" class="logo">storyWEavers</a>
       </div>
       <div class="privacy-and-copyright">
         <span class="privacy-terms">

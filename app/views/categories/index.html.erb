@@ -4,10 +4,16 @@
   </a>
 </div>
 <div class="row-set">
-
-    <% @last_articles_list.each do |article| %>
-        <%= render partial: 'category_box', locals: { article: article } %>
+    <% @last_articles_list.each_slice(2) do |couple_of_articles| %>
+      <div class="row">
+        <% couple_of_articles.each do |article| %>
+          <div class="half-row">
+            <%= render partial: 'category_box', locals: { article: article } %>
+          </div>
+        <% end %>
+      </div>
     <% end %>
-
 </div>
-<%= will_paginate @last_articles_list %>
+<div class="pagination">
+  <%= will_paginate @last_articles_list %>
+</div>

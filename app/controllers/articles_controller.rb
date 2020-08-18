@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
 
   def index
     @category = Category.find_it(params[:id])
-    @articles = @category.recent_articles unless @category.nil?
+    @articles = @category.recent_articles.paginate(page: params[:page], per_page: 8) unless @category.nil?
   end
 
   def create
@@ -19,6 +19,7 @@ class ArticlesController < ApplicationController
     else
       redirect_to root_path, alert: 'Another great post lost to the Internet limbo'
     end
+    LastArticle.refresh
   end
 
   private

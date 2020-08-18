@@ -1,17 +1,20 @@
-<span class="box">
-      <div class="titles">
+<span class="text-box box">
+      <div class="article-content">
+
         <h6 class="title categ-name">
           <%= @category.name %>
         </h6>
-        <h6 class="title article-title">
-          <%= article.title %>
-        </h6>
-        <p class="title article-text">
-          <%= article.text %>
-        </p>
-        <p class="title article-text">
-          By <%= article.author.name %>
-        </p>
+        <a href="<%= 'articles/show/' + article.id.to_s %>" class="category-link">
+            <h6 class="title article-title">
+              <%= article.title %>
+            </h6>
+        </a>
+          <p class="title article-text">
+            <%= article.text.truncate(150) %>
+          </p>
+          <p class="title article-author">
+            By <%= article.author.name %>
+          </p>
         <%= vote_unvote_btn(article) %>
       </div>
 </span>
