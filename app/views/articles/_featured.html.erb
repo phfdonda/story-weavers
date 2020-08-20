@@ -1,5 +1,8 @@
 <div class="featured">
   <div class="box-img" style='background-image: url(<%= display_image(featured_article.image_data) %>);'>
-    <p class="title orange"> <%= featured_article.title %></p>
+  <div class="titles down">
+    <p class="title"> <%= featured_article.title %></p>
+    <p class="featured-text"> <%= featured_article.text.truncate(250) %></p>
+</div>
   </div>
 </div>
