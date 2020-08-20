@@ -2,7 +2,8 @@ class Article < ApplicationRecord
   include ImageUploader[:image]
 
   belongs_to :author, class_name: 'User'
-  belongs_to :category
+  has_many :categorizations
+  has_many :categories, through: :categorization
   has_one :last_article
   has_many :votes, dependent: :destroy
 

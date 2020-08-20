@@ -318,7 +318,7 @@ label{
  }
 
   .row{
-   height:70vh;
+   height:50vh;
    width: 100%;
    display: flex;
   }
@@ -329,6 +329,12 @@ label{
    display: flex;
    width: 50%;
    height: 100%;
+  }
+
+  .quarter-row{
+    display:flex;
+    width: 25%;
+    height: 100%;
   }
 
   .box-img{
@@ -357,6 +363,21 @@ label{
   color: black;
 }
 
+.last-article-title{
+  color: white;
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
 .article-text{
   font-size: 0.7rem;
+}
+
+.down{
+  justify-content: flex-end;
+}
+
+.featured-text{
+  color: white;
+  margin-top: 20px;
 }

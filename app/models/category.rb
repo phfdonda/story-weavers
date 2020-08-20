@@ -1,7 +1,8 @@
 class Category < ApplicationRecord
-  validates :name, uniqueness: true
+  validates :name, length: { in: 4..15 }, presence: true, uniqueness: true
 
-  has_many :articles, foreign_key: 'category_id', dependent: :destroy
+  has_many :categorizations
+  has_many :articles, through: :categorization, foreign_key: 'category_id'
   has_many :recent_articles, -> { order(created_at: :desc) }, class_name: 'Article'
   has_one :last_article
 
