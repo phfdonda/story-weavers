@@ -3,8 +3,7 @@ class Category < ApplicationRecord
 
   has_many :articles, foreign_key: 'category_id', dependent: :destroy
   has_many :recent_articles, -> { order(created_at: :desc) }, class_name: 'Article'
-  has_one :last_article, -> { order(created_at: :desc).limit(1) }, foreign_key: 'category_id', class_name: 'Article'
-  has_one_attached :image
+  has_one :last_article
 
   scope :by_priority, -> { order(:priority) }
 

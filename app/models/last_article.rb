@@ -1,4 +1,7 @@
 class LastArticle < ActiveRecord::Base
+  belongs_to :article
+  belongs_to :category
+
   self.primary_key = :id
 
   def self.refresh

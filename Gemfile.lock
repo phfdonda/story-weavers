@@ -193,6 +193,7 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    sequel (5.35.0)
     shrine (3.2.2)
       content_disposition (~> 1.0)
       down (~> 5.1)
@@ -265,6 +266,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   scenic
   selenium-webdriver
+  sequel
   shrine
   simple_form
   simplecov

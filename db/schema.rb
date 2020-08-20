@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2020_08_05_210607) do
     t.bigint "category_id"
     t.string "category_name"
     t.bigint "author_id"
+    t.json "image_data"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["author_id"], name: "index_articles_on_author_id"
@@ -81,18 +82,18 @@ ActiveRecord::Schema.define(version: 2020_08_05_210607) do
   create_view "last_articles", materialized: true, sql_definition: <<-SQL
       SELECT la.id,
       la.title,
+      la.image_data,
       c.id AS category_id,
-      c.name AS category_name,
-      actstor.record_id AS activestorage_image
-     FROM ((categories c
+      c.name AS category_name
+     FROM (categories c
        JOIN ( SELECT articles.id,
               articles.title,
-              articles.category_id
+              articles.category_id,
+              articles.image_data
              FROM articles
             WHERE (articles.id IN ( SELECT max(articles_1.id) OVER (PARTITION BY articles_1.category_id) AS max
                      FROM articles articles_1
                     ORDER BY articles_1.id DESC))) la ON ((c.id = la.category_id)))
-       JOIN active_storage_attachments actstor ON ((la.id = actstor.record_id)))
     ORDER BY c.priority;
   SQL
 end

@@ -317,9 +317,12 @@ label{
   flex-wrap: wrap;
  }
 
- .row{
-   height: 50vh;
- }
+  .row{
+   height:70vh;
+   width: 100%;
+   display: flex;
+  }
+
 
  .half-row{
    @include center;
@@ -347,14 +350,8 @@ label{
  .featured {
    height: 50vh;
    width: 100%;
-   padding: 20px;
  }
 
- .row{
-   height:30vh;
-   width: 100%;
-   display: flex;
- }
 
  .article-title{
   color: black;

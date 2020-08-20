@@ -57,6 +57,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'hirb'
+gem 'sequel'
 gem 'scenic'
 gem 'shrine'
 gem 'simple_form'

@@ -31,7 +31,7 @@ module ApplicationHelper
     end
   end
 
-  def display_image(image)
-    rails_blob_url(image) if image.attached?
+  def display_image(json)
+    '/uploads/' + json['id'] if json
   end
 end

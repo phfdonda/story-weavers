@@ -34,9 +34,7 @@ class CategoriesController < ApplicationController
   end
 
   def set_variables
-    @top_categories = Category.includes(:articles).by_priority
-    @featured = @top_categories.first
-    @featured_article = Article.includes(:category).most_voted.first
-    @last_articles_list = Article.last_articles.paginate(page: params[:page], per_page: 8)
+    @featured_article = Article.most_voted.first
+    @last_articles_list = LastArticle.all.paginate(page: params[:page], per_page: 4)
   end
 end
