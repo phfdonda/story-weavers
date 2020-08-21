@@ -19,6 +19,6 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out
-    redirect_to(root_path, notice: 'Buh-bye! Safe travels!')
+    redirect_to(root_path, alert: 'Buh-bye! Safe travels!')
   end
 end

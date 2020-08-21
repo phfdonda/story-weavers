@@ -3,8 +3,11 @@ require 'rails_helper'
 RSpec.feature 'Sessions', type: :feature do
   context 'User exist' do
     let!(:user) { create(:random_user) }
+    let!(:category) { create(:random_category) }
+    let!(:article) { create(:random_article) }
 
     it 'successfully creates a session' do
+      prep_article
       login_user(user)
       expect(page).to have_content('Welcome, dear writer!')
     end

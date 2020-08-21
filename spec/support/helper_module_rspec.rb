@@ -7,16 +7,17 @@ module HelperModuleRspec
     click_button 'Log In'
   end
 
-  def logout_user(user)
+  def logout_user(_user)
     visit root_path
     within('nav') do
-      click_button 'Log Out'
+      click_link 'Log Out'
     end
   end
 
   def prep_article
-    user
-    category
-    article
+    user = create(:random_user)
+    category = create(:random_category)
+    article = create(:random_article)
+    [user, category, article]
   end
 end
