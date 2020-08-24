@@ -8,5 +8,5 @@ class Article < ApplicationRecord
   scope :most_voted, -> { order(n_of_votes: :desc) }
   scope :most_recent, -> { order(id: :desc) }
 
-  validates :text, length: { maximum: 1000 }
+  validates :text, length: { maximum: 5000 }
 end
