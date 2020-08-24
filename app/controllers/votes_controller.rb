@@ -6,7 +6,11 @@ class VotesController < ApplicationController
     @article = Article.find_it(params[:article_id])
     @article.n_of_votes += 1
     vote_phrase = "'#{@article.title}' got your vote! Lucky one!"
-    redirect_to "/category/show/#{@article.category_id}", notice: vote_phrase if @vote.save && @article.save
+    if @vote.save && @article.save
+      redirect_to "/category/show/#{@article.category_id}", notice: vote_phrase
+    else
+      redirect to root_path, alert: 'Sorry about that, we lost your vote somewhere. Would you try again?'
+    end
   end
 
   def destroy

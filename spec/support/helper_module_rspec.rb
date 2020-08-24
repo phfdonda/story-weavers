@@ -7,17 +7,18 @@ module HelperModuleRspec
     click_button 'Log In'
   end
 
-  def logout_user(_user)
+  def logout_user
     visit root_path
     within('nav') do
       click_link 'Log Out'
     end
   end
 
-  def prep_article
-    user = create(:random_user)
-    category = create(:random_category)
-    article = create(:random_article)
-    [user, category, article]
+  def test_vote
+    login_user(user)
+    LastArticle.refresh
+    visit root_path
+    click_link 'categ-link', visible: false
+    click_link 'Vote'
   end
 end

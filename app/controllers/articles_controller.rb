@@ -1,6 +1,10 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!
 
+  def new
+    @categories = Category.all
+  end
+
   def show
     @article = Article.find_it(params[:id])
   end

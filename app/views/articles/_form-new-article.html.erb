@@ -1,28 +1,28 @@
 <%= simple_form_for(:article, url: new_article_path) do |f| %>
 
     <div class="field">
-      <%= f.label :name, 'Title ' %>
+      <%= f.label :title, 'Title' %>
       <%= f.input_field :title,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "title" }%>
     </div>
     <div class="field">
-      <%= f.label :name, 'Category ' %>
+      <%= f.label :category_id, 'Category' %>
       <br>
       <%= f.input_field :category_id,
-                collection: Category.categories_list,
+                collection: @categories,
                 input_html: { autocomplete: "category" }%>
     </div>
     <div class="field">
-      <%= f.label :text, 'Text ' %>
+      <%= f.label :text, 'Text' %>
       <br>
       <%= f.input_field :text,
                 as: :text,
                 input_html: { autocomplete: "text" }%>
     </div>
     <div class="field">
-     <%= f.label :image, 'Image ' %>
+     <%= f.label :image, 'Image' %>
       <br>
       <%= f.hidden_field :image, value: f.object&.cached_image_data %>
       <%= f.file_field :image %>

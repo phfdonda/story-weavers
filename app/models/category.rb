@@ -11,12 +11,4 @@ class Category < ApplicationRecord
 
     true
   end
-
-  def self.categories_list
-    categories_list = []
-    Category.all.each do |c|
-      categories_list << c
-    end
-    categories_list
-  end
 end

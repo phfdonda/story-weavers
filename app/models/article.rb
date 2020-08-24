@@ -9,8 +9,4 @@ class Article < ApplicationRecord
   scope :most_recent, -> { order(id: :desc) }
 
   validates :text, length: { maximum: 1000 }
-
-  def self.last_articles
-    includes(:category).all.where(id: LastArticle.ids)
-  end
 end

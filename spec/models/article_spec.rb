@@ -8,7 +8,7 @@ RSpec.describe 'Article' do
     let(:long_text) { 'X' * 1001 }
 
     it 'should create an article' do
-      expect(article.id).to eql(1)
+      expect(Article.all.count).to eql(1)
     end
 
     it 'should refuse the creation of a article longer than 1000 char' do

@@ -48,6 +48,9 @@ end
 group :test do
   gem 'capybara', '>= 2.15'
   gem 'factory_bot_rails'
+  gem 'phantomjs'
+  gem 'poltergeist'
+  gem 'launchy'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'simplecov'
