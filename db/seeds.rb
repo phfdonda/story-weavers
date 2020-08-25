@@ -7,8 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require_relative '../lib/populator_fix.rb'
 
-n = 0
-
 User.populate 10 do |u|
   u.name = Faker::Name.first_name
   u.email = Faker::Internet.email
