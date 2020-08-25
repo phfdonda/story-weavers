@@ -1,0 +1,19 @@
+<div class="featured">
+  <a href="/">
+    <%= render partial: 'articles/featured', locals: {featured_article: @featured_article} %>
+  </a>
+</div>
+<div class="row-set">
+    <% @last_articles_list.each_slice(4) do |four_articles| %>
+      <div class="row">
+        <% four_articles.each do |article| %>
+          <div class="quarter-row">
+            <%= render partial: 'category_box', locals: { article: article } %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+</div>
+<div class="pagination">
+  <%= will_paginate @last_articles_list %>
+</div>

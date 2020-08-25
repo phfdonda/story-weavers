@@ -1,0 +1,15 @@
+<div class="row_set">
+    <% @articles.each_slice(2) do |couple_of_articles| %>
+        <div class="row">
+          <% couple_of_articles.each do |article| %>
+            <div class="half-row">
+              <%= render partial: 'text_box', locals: { article: article } %>
+              <%= render partial: 'img_box', locals: { article: article } %>
+            </div>
+          <% end %>
+        </div>
+    <% end %>
+</div>
+<div class="pagination">
+  <%= will_paginate @articles %>
+</div>

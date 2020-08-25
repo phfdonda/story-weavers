@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>storyWEavers</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+
+  <body>
+   <nav>
+      <a href="/" class="logo">storyWEavers</a>
+      <div class="nav-links">
+
+        <a href="/" class="nav-link">Home</a>
+        <a href="/new_article" class="nav-link">Write an Article</a>
+
+      </div>
+      <div class="logged">
+      <%= logged_in_as %>
+      </div>
+    </nav>
+
+    <%= flash_msg %>
+
+    <main>
+    <%= yield %>
+    </main>
+    <footer>
+    <div>
+      <a href="/" class="logo">storyWEavers</a>
+      </div>
+      <div class="privacy-and-copyright">
+        <span class="privacy-terms">
+          <a href="categories/index.html" class="privacy">Privacy Policy</a>
+          <a href="/" class="terms">Terms & Conditions</a>
+        </span>
+        <span class="copyright">
+          Copyright 2020. All rights reserved.
+        </span>
+      </div>
+      <div class="social">
+        <span class="connect">Connect with me:</span>
+        <span class="social-logos">
+          <a href="https://twitter.com/phfdonda"><span class="social-logo center twitter"></span></a>
+          <a href="https://github.com/phfdonda"><span class="social-logo center github"></span></a>
+          <a href="https://www.linkedin.com/in/pedro-donda/"><span class="social-logo center linkedin"></span></a>
+        </span>
+      </div>
+    </footer>
+  </body>
+
+</html>

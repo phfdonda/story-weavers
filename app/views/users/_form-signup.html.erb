@@ -1,0 +1,15 @@
+<%= simple_form_for(:user, url: signup_path) do |f| %>
+    <div class="field">
+      <%= f.label :name, 'Name ' %>
+      <%= f.input_field :name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "name" }%>
+    </div>
+    <div class="field">
+      <%= f.label :email, 'Email ' %>
+      <%= f.input_field :email,
+                input_html: { autocomplete: "email" }%>
+    </div>
+  <%= f.button :submit, "Sign Up"%>
+<% end %>

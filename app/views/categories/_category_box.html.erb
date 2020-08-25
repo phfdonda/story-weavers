@@ -1,0 +1,15 @@
+<span class="box">
+  <div class="box-img shadow" style='background-image: url(<%= display_image(article.image_data)  %>);'>
+    <a href="<%= 'category/show/' + article.category_id.to_s %>">
+      <p hidden="true">categ-link</p>
+      <div class="titles">
+        <p class="categ-name">
+          <%= article.category_name %>
+        </p>
+        <p class="last-article-title">
+          <%= article.title %>
+        </p>
+      </div>
+    </a>
+  </div>
+</span>
