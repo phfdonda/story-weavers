@@ -7,7 +7,32 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require_relative '../lib/populator_fix.rb'
 
+n = 0
+
 User.populate 10 do |u|
   u.name = Faker::Name.first_name
   u.email = Faker::Internet.email
+end
+Category.populate 10 do |c|
+  c.name = Faker::Movies::HitchhikersGuideToTheGalaxy.planet
+  c.priority = Random.rand(5)
+end
+Article.populate 30 do |a|
+  n += 1
+  a.author_id = n
+  a.category_id = n
+  a.n_of_votes = 0
+  a.title = Faker::Movies::HitchhikersGuideToTheGalaxy.location
+  a.text = Faker::Movies::HitchhikersGuideToTheGalaxy.quote
+  a.category_name = Category.find(n).name
+  n = 0 if n > 9
+end
+Vote.populate 10 do |v|
+  n += 1
+  v.user_id = 1
+  v.article_id = n + 1
+  a = Article.find(n + 1)
+  a.n_of_votes += 1
+  a.save
+  n = 0 if n > 9
 end
