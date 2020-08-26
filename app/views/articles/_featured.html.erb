@@ -2,7 +2,7 @@
   <div class="box-img" style='background-image: url(<%= display_image(featured_article.image_data) %>);'>
   <div class="titles down">
     <p class="title"> <%= featured_article.title %></p>
-    <p class="featured-text"> <%= featured_article&.text.truncate(250) %></p>
+    <p class="featured-text"> <%= truncated_text(250, featured_article.text) %></p>
 </div>
   </div>
 </div>
