@@ -111,7 +111,8 @@ As seen in the ERD, we have to create the following tables:
 - Articles
 - Categories
 - Votes
-However, although it is required of me to create a database that "reflects" this ERD, there is a fundamental flaw in the relationship diagram: we have a many-to-many relation between Category and Article tables. I have to fix that, and by doing so I no longer "reflect" the ERD. There are two options, if I want to make it as similar as possible: first, I could create a join table to make a "through" relationship; the other one is just changing the many-to-many into one-to-many. The option that is most similar to the ERD is the last one, since we don't have to create a table that isn't there. Also, it better reflects our business requirements: if we consider the "category" a story, and each "article" a chapter, than you can't have a chapter that belongs to many stories. 
+However, although it is required of me to create a database that "reflects" this ERD, there is a fundamental flaw in the relationship diagram: we have a many-to-many relationship between Category and Article tables. I have to fix that, and by doing so I no longer "reflect" the ERD. There are two options, if I want to make it as similar as possible: first, I could create a join table to make a "through" relationship; the other one is just changing the many-to-many into one-to-many. The option that is most similar to the ERD is the last one, since we don't have to create a table that isn't there. Also, it better reflects our business requirements: if we consider the "category" a story, and each "article" a chapter, then you can't have a chapter that belongs to many stories, but a story will have many chapters. 
+
 
 <!-- CONTACT -->
 ## Contact
