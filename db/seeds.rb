@@ -25,17 +25,3 @@ categories = Category.create([
                                { name: "Grimm's Fairy Tales", priority: 1 },
                                { name: 'Frankenstein', priority: 5 }
                              ])
-
-articles = Article.create([
-                            { title: '', text: '', category_id: 1 }
-                          ])
-
-Vote.populate 10 do |v|
-  n += 1
-  v.user_id = 1
-  v.article_id = n + 1
-  a = Article.find(n + 1)
-  a.n_of_votes += 1
-  a.save
-  n = 0 if n > 9
-end
