@@ -44,19 +44,17 @@ The page looks like this:
 
 This is my Capstone Project for Ruby on Rails, the final assignment for the RoR course in Microverse curriculum. It is a real-world-like project, meant to emulate the specifications of a real website required by a client. I had to achieve the following aspects:
 
-1. The style should follow this design: [Lifestyle Blog](https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version), created by [Nelson Sakwa](https://www.behance.net/sakwadesignstudio).
-2. It is meant only for desktop browsers, so no responsiveness is required for this project in particular.
-3. I should create my own theme for the website.
-4. Whatever theme I choose, I should not get too carried away (harder than it seems) - instead, the purpose is to create a MVP version of the app.
-5. The database should "reflect" this ERD:
+**1.** The style should follow this design: [Lifestyle Blog](https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version), created by [Nelson Sakwa](https://www.behance.net/sakwadesignstudio).
+**2.** It is meant only for desktop browsers, so no responsiveness is required for this project in particular.
+**3.** I should create my own theme for the website.
+**4.** Whatever theme I choose, I should not get too carried away (harder than it seems) - instead, the purpose is to create a MVP version of the app.
+**5.** The database should "reflect" this ERD:
  ![ERD](./docs/ERD__articles.png)
-6. The columns names shouldn't be changed.
-7. We have three pages required for this project:
-  7.1. Main Page
-    - The most voted article is displayed in the main page, full width. It contains its title and a part of the text. Below comes squares representing all the           categories, sorted by priority - whatever that is. Each of these squares has a background image that is taken from the latest article of respective category. On the top of the square comes the name of the category, and on the bottom comes the title of this same latest article.
-  7.2. Category's list of articles
-    - When you click the category's box on the main page, you're taken to this category's list of articles, where you can see them displayed in rows, two for each. They are divided in two boxes: an image box, and a text box. The image box has nothing else apart from the image, but the text box comes with: category name, title, text (truncated if necessary), the author's name and at the end it must have a button to vote or unvote.
-8. At the end I should add a feature of my own.
+**6.** The columns names shouldn't be changed.
+**7.** We have three pages required for this project:
+  - **Main Page:** The most voted article is displayed in the main page, full width. It contains its title and a part of the text. Below comes squares representing all the           categories, sorted by priority - whatever that is. Each of these squares has a background image that is taken from the latest article of respective category. On the top of the square comes the name of the category, and on the bottom comes the title of this same latest article.
+  -**Category's list of articles:** When you click the category's box on the main page, you're taken to this category's list of articles, where you can see them displayed in rows, two for each. They are divided in two boxes: an image box, and a text box. The image box has nothing else apart from the image, but the text box comes with: category name, title, text (truncated if necessary), the author's name and at the end it must have a button to vote or unvote.
+**8.** At the end I should add a feature of my own.
 
 
 The goals of this project are to:
