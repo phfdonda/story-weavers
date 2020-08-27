@@ -7,7 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require_relative '../lib/populator_fix.rb'
 
+n = 0
+
 User.populate 10 do |u|
   u.name = Faker::Name.first_name
   u.email = Faker::Internet.email
 end
+
+categories = Category.create([
+                               { name: 'Dracula', priority: 3 },
+                               { name: 'Alice in Wonderland', priority: 2 },
+                               { name: 'Metamorphosis', priority: 5 },
+                               { name: 'Pride and Prejudice', priority: 4 },
+                               { name: 'Sherlock Holmes', priority: 0 },
+                               { name: 'War and Peace', priority: 4 },
+                               { name: 'Dr. Jekyl and Mr. Hyde', priority: 3 },
+                               { name: "Grimm's Fairy Tales", priority: 1 },
+                               { name: 'Frankenstein', priority: 5 }
+                             ])

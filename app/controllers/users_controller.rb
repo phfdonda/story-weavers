@@ -11,7 +11,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
+    if @user.valid?
+      @user.save
       log_in @user
       remember @user
       redirect_to root_path, notice: 'Yay! You are one of us now! A big welcome!!!'

@@ -32,7 +32,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'faker'
-  gem 'populator'
 end
 
 group :development do
@@ -48,9 +47,9 @@ end
 group :test do
   gem 'capybara', '>= 2.15'
   gem 'factory_bot_rails'
+  gem 'launchy'
   gem 'phantomjs'
   gem 'poltergeist'
-  gem 'launchy'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'simplecov'
@@ -59,9 +58,13 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'hirb'
+gem 'populator'
 gem 'scenic'
 gem 'sequel'
 gem 'shrine'
 gem 'simple_form'
+gem 'taps'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'will_paginate'
+gem 'aws-sdk-s3'
+gem 'shrine-memory'

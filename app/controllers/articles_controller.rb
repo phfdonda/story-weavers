@@ -18,7 +18,8 @@ class ArticlesController < ApplicationController
     @article = current_user.articles.new(article_params)
     @article.category_name = Category.find_it(article_params[:category_id]).name
 
-    if @article.save
+    if @article.valid?
+      @article.save
       redirect_to root_path, notice: 'Let the world be amazed! Your article was published!'
     else
       redirect_to root_path, alert: 'Another great post lost to the Internet limbo'

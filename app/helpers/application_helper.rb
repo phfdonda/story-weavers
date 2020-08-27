@@ -34,4 +34,8 @@ module ApplicationHelper
   def display_image(json)
     '/uploads/' + json['id'] if json
   end
+
+  def truncated_text(size, text = nil)
+    text&.truncate(size)
+  end
 end

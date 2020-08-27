@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
   private
 
   def set_variables
-    @featured_article = Article.most_voted.first
+    @featured_article = Article.most_voted
     @last_articles_list = LastArticle.all.paginate(page: params[:page], per_page: 8)
   end
 end
