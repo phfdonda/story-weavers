@@ -57,14 +57,14 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'aws-sdk-s3'
 gem 'hirb'
 gem 'populator'
+gem 'rest-client', '>= 1.8.0'
 gem 'scenic'
 gem 'sequel'
 gem 'shrine'
+gem 'shrine-memory'
 gem 'simple_form'
-gem 'taps'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'will_paginate'
-gem 'aws-sdk-s3'
-gem 'shrine-memory'
