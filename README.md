@@ -45,7 +45,7 @@ This is my Capstone Project for Ruby on Rails, the final assignment for the RoR 
 2. It is meant only for desktop browsers, so no responsiveness is required for this project in particular.
 3. I should create my own theme for the website.
 4. Whatever theme I choose, I should not get too carried away (harder than it seems) - instead, the purpose is to create a MVP version of the app.
-5. The database should reflect this ERD:
+5. The database should "reflect" this ERD:
  ![ERD](./docs/ERD__articles.png)
 6. The columns names shouldn't be changed.
 7. .
@@ -106,7 +106,12 @@ The website is called storyWEavers because, like weavers, people will contribute
 
 ### Translation of business requirements into software design
 This is a project created initially as a Capstone Project for the Microverse course - so I have to follow the requirements of the project, at least until it is approved. After that I can take this project to new horizons.
-
+As seen in the ERD, we have to create the following tables:
+- Users
+- Articles
+- Categories
+- Votes
+However, although it is required of me to create a database that "reflects" this ERD, there is a fundamental flaw in the relationship diagram: we have a many-to-many relation between Category and Article tables. I have to fix that, and by doing so I no longer "reflect" the ERD. There are two options, if I want to make it as similar as possible: first, I could create a join table to make a "through" relationship; the other one is just changing the many-to-many into one-to-many. The option that is most similar to the ERD is the last one, since we don't have to create a table that isn't there. Also, it better reflects our business requirements: if we consider the "category" a story, and each "article" a chapter, than you can't have a chapter that belongs to many stories. 
 
 <!-- CONTACT -->
 ## Contact
