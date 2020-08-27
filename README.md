@@ -79,7 +79,9 @@ The goals of this project are to:
 ## Installation
 
 Ruby is needed to run this file. Follow these steps to install it: 
-https://www.theodinproject.com/courses/web-development-101/lessons/installing-ruby
+[TOP - Install Ruby](https://www.theodinproject.com/courses/web-development-101/lessons/installing-ruby)
+
+Rails is also needed. To install it, follow the instructions in this link: [TOP - Install Ruby on Rails](https://www.theodinproject.com/courses/ruby-on-rails/lessons/your-first-rails-application-ruby-on-rails)
 
 You can download the [repo](https://github.com/phfdonda/story-weavers) or clone (paste on the terminal) ```git clone git@github.com:phfdonda/story-weavers.git```
 
