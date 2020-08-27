@@ -51,8 +51,12 @@ This is my Capstone Project for Ruby on Rails, the final assignment for the RoR 
 5. The database should "reflect" this ERD:
  ![ERD](./docs/ERD__articles.png)
 6. The columns names shouldn't be changed.
-7. .
-8. .
+7. We have three pages required for this project:
+  7.1. Main Page
+    - The most voted article is displayed in the main page, full width. It contains its title and a part of the text. Below comes squares representing all the           categories, sorted by priority - whatever that is. Each of these squares has a background image that is taken from the latest article of respective category. On the top of the square comes the name of the category, and on the bottom comes the title of this same latest article.
+  7.2. Category's list of articles
+    - When you click the category's box on the main page, you're taken to this category's list of articles, where you can see them displayed in rows, two for each. They are divided in two boxes: an image box, and a text box. The image box has nothing else apart from the image, but the text box comes with: category name, title, text (truncated if necessary), the author's name and at the end it must have a button to vote or unvote.
+8. At the end I should add a feature of my own.
 
 
 The goals of this project are to:
@@ -115,9 +119,10 @@ As seen in the ERD, we have to create the following tables:
 - Articles
 - Categories
 - Votes
+
 However, although it is required of me to create a database that "reflects" this ERD, there is a fundamental flaw in the relationship diagram: we have a many-to-many relationship between Category and Article tables. I have to fix that, and by doing so it no longer "reflects" the ERD. The requirements of the project have no strict directions about this, so it is up to me. There are two options, if I want to make it as similar as possible: first, I could create a whole new table to make a "through" relationship; the other one is just changing the many-to-many into one-to-many. The option that is most similar to the ERD is the last one, since we don't have to create a table that isn't there. Also, it better reflects our business requirements: if we consider the "category" a story, and each "article" a chapter, then you can't have a chapter that belongs to many stories, but a story will have many chapters. Therefore, one Category have many Articles still, but an Article has only one Category.
 The business requirements would demand a "Comments" table, so users could comment to suggest modifications on possible chapters. However, we don't have that table in the ERD, and this is a MVP. Let's leave that for later.
-Users can vote, 
+Users can vote, and those votes can be used for later logic - for example, to choose the "thread" that is going to be merged. For now, it's only used to choose the featured article that is displayed in the front page.
 
 
 <!-- CONTACT -->
