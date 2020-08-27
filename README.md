@@ -92,14 +92,13 @@ To open it in your browser, you'll have to set a local server. To do that, in th
 Enjoy!! 
 
 ### Built With
-This project was built using these technologies.
 * Ruby
 * Rails
 * VsCode
 * Rubocop and Stickler for linting
 
 ## Development Process
-I decided the theme beforehand, as if I was a client passing her business requirements. I decided the name of the website would be storyWEavers.
+I decided the theme beforehand, as if I was a client passing her business requirements before hiring me. I decided the name of the website would be storyWEavers.
 
 ### Business requirements
 The business concept of the website is this: **the same way we programmers can open-source the development of software, with descentralized contribution of the community, what if we could open-source the development of stories?**
@@ -113,7 +112,9 @@ As seen in the ERD, we have to create the following tables:
 - Articles
 - Categories
 - Votes
-However, although it is required of me to create a database that "reflects" this ERD, there is a fundamental flaw in the relationship diagram: we have a many-to-many relationship between Category and Article tables. I have to fix that, and by doing so I no longer "reflect" the ERD. There are two options, if I want to make it as similar as possible: first, I could create a join table to make a "through" relationship; the other one is just changing the many-to-many into one-to-many. The option that is most similar to the ERD is the last one, since we don't have to create a table that isn't there. Also, it better reflects our business requirements: if we consider the "category" a story, and each "article" a chapter, then you can't have a chapter that belongs to many stories, but a story will have many chapters. 
+However, although it is required of me to create a database that "reflects" this ERD, there is a fundamental flaw in the relationship diagram: we have a many-to-many relationship between Category and Article tables. I have to fix that, and by doing so it no longer "reflects" the ERD. The requirements of the project have no strict directions about this, so it is up to me. There are two options, if I want to make it as similar as possible: first, I could create a whole new table to make a "through" relationship; the other one is just changing the many-to-many into one-to-many. The option that is most similar to the ERD is the last one, since we don't have to create a table that isn't there. Also, it better reflects our business requirements: if we consider the "category" a story, and each "article" a chapter, then you can't have a chapter that belongs to many stories, but a story will have many chapters. Therefore, one Category have many Articles still, but an Article has only one Category.
+The business requirements would demand a "Comments" table, so users could comment to suggest modifications on possible chapters. However, we don't have that table in the ERD, and this is a MVP. Let's leave that for later.
+Users can vote, 
 
 
 <!-- CONTACT -->
