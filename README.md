@@ -24,6 +24,9 @@
 
 This is an app deployed in Heroku, so please wait 30 seconds for it to load the first time.
 
+The page looks like this:
+![main-page](./docs/storyWEavers-home.png)
+
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
