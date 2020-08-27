@@ -31,6 +31,7 @@ This is an app deployed in Heroku, so please wait 30 seconds for it to load the 
   * [Installation](#installation)
   * [Instructions](#instructions)
   * [Built With](#built-with)
+  * [Development Process](#development-process)
   * [Testing](#testing)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
