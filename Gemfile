@@ -66,3 +66,5 @@ gem 'simple_form'
 gem 'taps'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'will_paginate'
+gem 'aws-sdk-s3'
+gem 'shrine-memory'
