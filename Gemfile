@@ -45,7 +45,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '>= 2.15'
+  gem 'capybara'
   gem 'factory_bot_rails'
   gem 'launchy'
   gem 'phantomjs'
@@ -57,10 +57,9 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'aws-sdk-s3'
+# gem 'aws-sdk-s3'
 gem 'hirb'
 gem 'populator'
-gem 'rest-client', '>= 1.8.0'
 gem 'scenic'
 gem 'sequel'
 gem 'shrine'

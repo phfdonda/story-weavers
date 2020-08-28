@@ -44,17 +44,20 @@ The page looks like this:
 
 This is my Capstone Project for Ruby on Rails, the final assignment for the RoR course in Microverse curriculum. It is a real-world-like project, meant to emulate the specifications of a real website required by a client. I had to achieve the following aspects:
 
-**1.** The style should follow this design: [Lifestyle Blog](https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version), created by [Nelson Sakwa](https://www.behance.net/sakwadesignstudio).
-**2.** It is meant only for desktop browsers, so no responsiveness is required for this project in particular.
-**3.** I should create my own theme for the website.
-**4.** Whatever theme I choose, I should not get too carried away (harder than it seems) - instead, the purpose is to create a MVP version of the app.
-**5.** The database should "reflect" this ERD:
+1. The style should follow this design: [Lifestyle Blog](https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version), created by [Nelson Sakwa](https://www.behance.net/sakwadesignstudio).
+2. It is meant only for desktop browsers, so no responsiveness is required for this project in particular.
+3. I should create my own theme for the website.
+4. Whatever theme I choose, I should not get too carried away (harder than it seems) - instead, the purpose is to create a MVP version of the app that can be extended in the future.
+5. The database should "reflect" this ERD:
  ![ERD](./docs/ERD__articles.png)
-**6.** The columns names shouldn't be changed.
-**7.** We have three pages required for this project:
-  - **Main Page:** The most voted article is displayed in the main page, full width. It contains its title and a part of the text. Below comes squares representing all the           categories, sorted by priority - whatever that is. Each of these squares has a background image that is taken from the latest article of respective category. On the top of the square comes the name of the category, and on the bottom comes the title of this same latest article.
-  -**Category's list of articles:** When you click the category's box on the main page, you're taken to this category's list of articles, where you can see them displayed in rows, two for each. They are divided in two boxes: an image box, and a text box. The image box has nothing else apart from the image, but the text box comes with: category name, title, text (truncated if necessary), the author's name and at the end it must have a button to vote or unvote.
-**8.** At the end I should add a feature of my own.
+6. The columns names shouldn't be changed.
+7. We have three pages required for this project:
+  - **Main Page:** The most voted article is displayed in the main page, full width. It contains its title and a part of the text. Bellow comes squares representing all the        categories, sorted by priority - whatever that is. Each of these squares has a background image that is taken from the latest article of respective category. On the top of the square comes the name of the category, and on the bottom comes the title of this same latest article.
+  - **Category's list of articles:** When you click the category's box on the main page, you're taken to this category's list of articles, sorted by most recent, where you can see them displayed in rows, two for each. They are divided in two boxes: an image box, and a text box. The image box has nothing else apart from the image, but the text box comes with: category name, title, text (truncated if necessary), the author's name and at the end it must have a button to vote or unvote. A user should be able to vote only one time in each article.
+  - **New Article:** On the navbar there must be a link to create a new article. This page must follow the same style of the rest of the website.
+8. It is not a requirement to create a secure login using passwords. A user should be able to login only typing their name.
+9. All pages have the same navbar and footer. The navbar should contain the logo to the left and the ```Home``` and ```Write an Article``` links.
+8. At the end I should add a feature of my own.
 
 
 The goals of this project are to:
@@ -83,18 +86,18 @@ The goals of this project are to:
 
 ## Installation
 
-Ruby is needed to run this file. Follow these steps to install it: 
+Ruby is needed to run this file. Follow these steps to install it:
 [TOP - Install Ruby](https://www.theodinproject.com/courses/web-development-101/lessons/installing-ruby)
 
 Rails is also needed. To install it, follow the instructions in this link: [TOP - Install Ruby on Rails](https://www.theodinproject.com/courses/ruby-on-rails/lessons/your-first-rails-application-ruby-on-rails)
 
 You can download the [repo](https://github.com/phfdonda/story-weavers) or clone (paste on the terminal) ```git clone git@github.com:phfdonda/story-weavers.git```
 
-Open the terminal and cd to the path where you download the project. It should be something like: ```User/<folder>/story-weavers/```. 
+Open the terminal and cd to the path where you download the project. It should be something like: ```User/<folder>/story-weavers/```.
 
 To open it in your browser, you'll have to set a local server. To do that, in this terminal type ```rails server```, or ```rails s``` for short. By default the port is set to 3000. In your browser url bar, type ```localhost:3000```.
 
-Enjoy!! 
+Enjoy!!
 
 ### Built With
 * Ruby
@@ -118,10 +121,18 @@ As seen in the ERD, we have to create the following tables:
 - Categories
 - Votes
 
-However, although it is required of me to create a database that "reflects" this ERD, there is a fundamental flaw in the relationship diagram: we have a many-to-many relationship between Category and Article tables. I have to fix that, and by doing so it no longer "reflects" the ERD. The requirements of the project have no strict directions about this, so it is up to me. There are two options, if I want to make it as similar as possible: first, I could create a whole new table to make a "through" relationship; the other one is just changing the many-to-many into one-to-many. The option that is most similar to the ERD is the last one, since we don't have to create a table that isn't there. Also, it better reflects our business requirements: if we consider the "category" a story, and each "article" a chapter, then you can't have a chapter that belongs to many stories, but a story will have many chapters. Therefore, one Category have many Articles still, but an Article has only one Category.
-The business requirements would demand a "Comments" table, so users could comment to suggest modifications on possible chapters. However, we don't have that table in the ERD, and this is a MVP. Let's leave that for later.
+However, although it is required of me to create a database that "reflects" this ERD, there is a fundamental flaw in the relationship diagram: we have a many-to-many relationship between Category and Article tables. I have to fix that, and by doing so it no longer "reflects" the ERD. The requirements of the project have no strict directions about this, so it is up to me. There are two options, if I want to make it as similar as possible: first, I could create a whole new table to make a "through" relationship; the other one is just changing the many-to-many into one-to-many.
+
+The option that is most similar to the ERD is the last one, since we don't have to create a table that isn't there. Also, it better reflects our business requirements: if we consider the "category" a story, and each "article" a chapter, then you can't have a chapter that belongs to many stories, but a story will have many chapters. Therefore, one Category have many Articles still, but an Article has only one Category.
+
+The business requirements would demand a "Comments" table, so users could comment to suggest modifications on possible chapters. However, we don't have that table in the ERD, and this project is a MVP. Let's leave that for later.
+
 Users can vote, and those votes can be used for later logic - for example, to choose the "thread" that is going to be merged. For now, it's only used to choose the featured article that is displayed in the front page.
 
+## Testing
+For testing I used the gems ```faker```, ```factory_bot```, ```capybara```, and ```rspec_rails```, among a few others.
+
+To test yourself, open the terminal, cd into the folder and run ```rspec````.
 
 <!-- CONTACT -->
 ## Contact
@@ -139,4 +150,3 @@ LinkedIn - [PedroDonda](https://www.linkedin.com/in/pedro-donda-808621bb/)
 * [The Odin Project](https://www.theodinproject.com/)
 * [Ruby](https://www.ruby-lang.org/en/)
 * [Nelson Sakwa](https://www.behance.net/sakwadesignstudio)
-
