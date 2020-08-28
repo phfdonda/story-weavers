@@ -5,7 +5,7 @@ RSpec.feature 'Articles', type: :feature do
     let!(:quote) { Faker::Movies::StarWars.quote }
     let!(:user) { create(:random_user) }
     let!(:category) { create(:random_category) }
-    let!(:article) { create(:random_article) }
+    let!(:article) { create(:random_article, author_id: user.id, category_id: category.id) }
 
     it 'should be able to create an article' do
       login_user(user)

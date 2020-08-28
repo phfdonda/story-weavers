@@ -1,7 +1,7 @@
 module HelperModuleRspec
   def login_user(user)
     visit login_path
-    
+
     within('form') do
       fill_in 'Name', with: user.name
     end
@@ -22,4 +22,5 @@ module HelperModuleRspec
     click_link 'categ-link', visible: false
     click_link 'Vote'
   end
+
 end

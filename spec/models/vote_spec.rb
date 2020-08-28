@@ -4,7 +4,7 @@ RSpec.describe 'Vote' do
   context 'Trying to vote' do
     let!(:author) { create(:random_user) }
     let!(:category) { create(:random_category) }
-    let!(:article) { create(:random_article) }
+    let!(:article) { create(:random_article, author_id: author.id, category_id: category.id) }
     let!(:voter) { create(:another_random_user) }
 
     it 'shouldn\'t give a vote when there is no article' do

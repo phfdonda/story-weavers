@@ -4,7 +4,7 @@ RSpec.describe 'Article' do
   context 'Creating new article' do
     let!(:user) { create(:random_user) }
     let!(:category) { create(:random_category) }
-    let!(:article) { create(:random_article) }
+    let!(:article) { create(:random_article, author_id: user.id, category_id: category.id) }
     let(:long_text) { 'X' * 1001 }
 
     it 'should create an article' do

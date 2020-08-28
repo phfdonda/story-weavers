@@ -4,7 +4,7 @@ RSpec.feature 'Sessions', type: :feature do
   context ': When trying to login and logout' do
     let!(:user) { create(:random_user) }
     let!(:category) { create(:random_category) }
-    let!(:article) { create(:random_article) }
+    let!(:article) { create(:random_article, author_id: user.id, category_id: category.id) }
 
     it ': the user should successfully login' do
       login_user(user)

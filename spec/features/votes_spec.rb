@@ -4,7 +4,7 @@ RSpec.feature 'Votes', type: :feature do
   context 'Articles were written and user wants to vote' do
     let!(:user) { create(:random_user) }
     let!(:category) { create(:random_category) }
-    let!(:article) { create(:random_article) }
+    let!(:article) { create(:random_article, author_id: user.id, category_id: category.id) }
 
     it 'should be able to vote' do
       test_vote
