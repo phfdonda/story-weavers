@@ -8,6 +8,7 @@ RSpec.feature 'Articles', type: :feature do
     let!(:article) { create(:random_article, author_id: user.id, category_id: category.id) }
 
     it 'should be able to create an article' do
+      byebug
       login_user(user)
       visit new_article_path
       within('form') do

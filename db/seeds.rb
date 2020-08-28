@@ -25,3 +25,6 @@ categories = Category.create([
                                { name: "Grimm's Fairy Tales", priority: 1 },
                                { name: 'Frankenstein', priority: 5 }
                              ])
+categories.each do |category|
+  category.articles.create(title: Faker::Movies::StarWars.character, text: Faker::Movies::StarWars.quote, category_name: category.name, author_id: Random.rand(1..9))
+end

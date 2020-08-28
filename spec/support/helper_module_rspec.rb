@@ -22,5 +22,4 @@ module HelperModuleRspec
     click_link 'categ-link', visible: false
     click_link 'Vote'
   end
-
 end

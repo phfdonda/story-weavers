@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
+  before_action :refresh_matview, only: :index
 
   def index
     set_variables
