@@ -52,7 +52,6 @@ group :test do
   gem 'poltergeist'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
-  gem 'simplecov'
   gem 'webdrivers'
 end
 
