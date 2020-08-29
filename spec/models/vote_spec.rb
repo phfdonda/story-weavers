@@ -2,9 +2,16 @@ require 'rails_helper'
 
 RSpec.describe 'Vote' do
   context 'Trying to vote' do
-    let!(:author) { create(:random_user) }
+    let!(:user) { create(:random_user) }
     let!(:category) { create(:random_category) }
-    let!(:article) { create(:random_article, author_id: author.id, category_id: category.id) }
+    let!(:article) do
+      create(
+        :random_article,
+        author_id: user.id,
+        category_id: category.id,
+        category_name: category.name
+      )
+    end
     let!(:voter) { create(:another_random_user) }
 
     it 'shouldn\'t give a vote when there is no article' do
