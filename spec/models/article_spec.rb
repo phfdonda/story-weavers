@@ -21,7 +21,7 @@ RSpec.describe 'Article' do
     it 'should refuse the creation of a article longer than 5000 char' do
       article.text = long_text
       article.valid?
-      expect(article.errors.messages[:text]).to eql(['is too long (maximum is 5 000 characters)'])
+      expect(article.errors.messages[:text]).to eql(['is too long (maximum is 5000 characters)'])
     end
 
     it 'should refuse the creation of a article with a user that doesn\'t exist' do
