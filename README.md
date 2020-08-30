@@ -132,7 +132,7 @@ Users can vote, and those votes can be used for later logic - for example, to ch
 ## Testing
 For testing I used the gems ```faker```, ```factory_bot```, ```capybara```, and ```rspec_rails```, among a few others.
 
-To test yourself, open the terminal, cd into the folder and run ```rspec````.
+To test by yourself, open the terminal, cd into the folder and run ```rspec````.
 
 <!-- CONTACT -->
 ## Contact

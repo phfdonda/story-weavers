@@ -12,16 +12,16 @@ RSpec.describe 'Article' do
         category_name: category.name
       )
     end
-    let(:long_text) { 'X' * 1001 }
+    let(:long_text) { 'X' * 5001 }
 
     it 'should create an article' do
       expect(Article.all.count).to eql(1)
     end
 
-    it 'should refuse the creation of a article longer than 1000 char' do
+    it 'should refuse the creation of a article longer than 5000 char' do
       article.text = long_text
       article.valid?
-      expect(article.errors.messages[:text]).to eql(['is too long (maximum is 1000 characters)'])
+      expect(article.errors.messages[:text]).to eql(['is too long (maximum is 5000 characters)'])
     end
 
     it 'should refuse the creation of a article with a user that doesn\'t exist' do
