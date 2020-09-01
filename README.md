@@ -95,6 +95,8 @@ You can download the [repo](https://github.com/phfdonda/story-weavers) or clone 
 
 Open the terminal and cd to the path where you download the project. It should be something like: ```User/<folder>/story-weavers/```.
 
+After that, you'll have to set up the database. In your terminal, run ```bundle install```, then ```rails db:create```, ```rails db:migrate``` and ```rails db:seed```. Those steps are necessary to create the database, fill it with content in order to make the page run correctly.
+
 To open it in your browser, you'll have to set a local server. To do that, in this terminal type ```rails server```, or ```rails s``` for short. By default the port is set to 3000. In your browser url bar, type ```localhost:3000```.
 
 Enjoy!!
@@ -133,6 +135,8 @@ Users can vote, and those votes can be used for later logic - for example, to ch
 For testing I used the gems ```faker```, ```factory_bot```, ```capybara```, and ```rspec_rails```, among a few others.
 
 To test by yourself, open the terminal, cd into the folder and run ```rspec````.
+
+If you have errors, you probably didn't set up the database correctly. Check again the section for [installation](#installation), and if necessary run ```rails db:reset```.
 
 <!-- CONTACT -->
 ## Contact
