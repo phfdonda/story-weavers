@@ -28,4 +28,8 @@ module StoryWeavers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
   end
+
+  Rails.application.config.assets.configure do |env|
+    env.export_concurrent = false
+  end
 end
