@@ -54,7 +54,6 @@ group :test do
 end
 
 # Extra gems
-gem 'aws-sdk-s3', '>= 2'
 gem 'hirb'
 gem 'populator'
 gem 'scenic'
