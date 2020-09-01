@@ -88,6 +88,18 @@ label{
  color: #fe6001;
 }
 
+select, input, textarea{
+  width: 100%;
+}
+
+textarea{
+  min-height: 50px;
+}
+
+textarea:focus{
+  min-height: 150px;
+}
+
 ***** CLASSES *****
 
 

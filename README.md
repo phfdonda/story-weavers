@@ -95,6 +95,8 @@ You can download the [repo](https://github.com/phfdonda/story-weavers) or clone 
 
 Open the terminal and cd to the path where you download the project. It should be something like: ```User/<folder>/story-weavers/```.
 
+If you encounter a problem with yarn packages, run ```yarn install --check-files```.
+
 After that, you'll have to set up the database. In your terminal, run ```bundle install```, then ```rails db:create```, ```rails db:migrate``` and ```rails db:seed```. Those steps are necessary to create the database, fill it with content in order to make the page run correctly.
 
 To open it in your browser, you'll have to set a local server. To do that, in this terminal type ```rails server```, or ```rails s``` for short. By default the port is set to 3000. In your browser url bar, type ```localhost:3000```.
