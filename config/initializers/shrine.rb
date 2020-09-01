@@ -25,3 +25,5 @@ else
   }
 end
 Shrine.plugin :activerecord
+Shrine.plugin :presign_endpoint
+Shrine.plugin :backgrounding

@@ -24,4 +24,8 @@ Rails.application.routes.draw do
   resources :articles, only: %i[index create] do
     resources :votes, only: %i[create destroy]
   end
+
+  Rails.application.routes.draw do
+    mount Shrine.presign_endpoint(:cache) => '/presign'
+  end
 end
