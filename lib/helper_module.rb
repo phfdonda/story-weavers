@@ -20,6 +20,10 @@ module HelperModule
     @current_user = nil
   end
 
+  def refresh_matview
+    LastArticle.refresh if LastArticle.all.empty?
+  end
+
   def authenticate_user!
     return if logged_in?
 

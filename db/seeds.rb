@@ -7,8 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require_relative '../lib/populator_fix.rb'
 
-n = 0
-
 User.populate 10 do |u|
   u.name = Faker::Name.first_name
   u.email = Faker::Internet.email
@@ -25,3 +23,11 @@ categories = Category.create([
                                { name: "Grimm's Fairy Tales", priority: 1 },
                                { name: 'Frankenstein', priority: 5 }
                              ])
+categories.each do |category|
+  category.articles.create(
+    title: Faker::Movies::StarWars.character,
+    text: Faker::Movies::StarWars.quote,
+    category_name: category.name,
+    author_id: Random.rand(1..9)
+  )
+end

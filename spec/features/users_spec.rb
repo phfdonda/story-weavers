@@ -4,7 +4,7 @@ RSpec.feature 'Users', type: :feature do
   context 'User does not exist' do
     let!(:user) { create(:random_user) }
     let!(:category) { create(:random_category) }
-    let!(:article) { create(:random_article) }
+    let!(:article) { create(:random_article, author_id: user.id, category_id: category.id) }
 
     it 'should successfully create an user account' do
       visit login_path
