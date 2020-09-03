@@ -6,10 +6,13 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
+    "tailwindcss": "^0.0.0-658250a96",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
   "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "postcss-loader": "^3.0.0",
     "webpack-dev-server": "^3.11.0"
   }
 }
